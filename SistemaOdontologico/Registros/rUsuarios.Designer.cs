@@ -189,7 +189,7 @@
             // 
             this.GuardarButton.Image = global::SistemaOdontologico.Properties.Resources.Save_icon1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(118, 220);
+            this.GuardarButton.Location = new System.Drawing.Point(119, 220);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(70, 23);
             this.GuardarButton.TabIndex = 16;
