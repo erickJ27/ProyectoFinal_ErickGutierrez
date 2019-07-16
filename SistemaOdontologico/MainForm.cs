@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaOdontologico.Registros;
 using SistemaOdontologico.Consultas;
-
+using SistemaOdontologico.Reportes;
 namespace SistemaOdontologico
 {
     public partial class MainForm : Form
@@ -29,7 +29,8 @@ namespace SistemaOdontologico
 
         private void ReportesDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rptUsuarios ver = new rptUsuarios();
+            ver.Show();
         }
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
