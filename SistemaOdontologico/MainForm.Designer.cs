@@ -30,11 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,10 +54,18 @@
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeUsuariosToolStripMenuItem});
+            this.registroDeUsuariosToolStripMenuItem,
+            this.registroDePacientesToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
+            // 
+            // registroDeUsuariosToolStripMenuItem
+            // 
+            this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
+            this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -65,13 +74,6 @@
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
-            // registroDeUsuariosToolStripMenuItem
-            // 
-            this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
-            this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
             // 
             // consultaDeToolStripMenuItem
             // 
@@ -91,9 +93,16 @@
             // reportesDeUsuariosToolStripMenuItem
             // 
             this.reportesDeUsuariosToolStripMenuItem.Name = "reportesDeUsuariosToolStripMenuItem";
-            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuario";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
+            // 
+            // registroDePacientesToolStripMenuItem
+            // 
+            this.registroDePacientesToolStripMenuItem.Name = "registroDePacientesToolStripMenuItem";
+            this.registroDePacientesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.registroDePacientesToolStripMenuItem.Text = "Registro de Pacientes";
+            this.registroDePacientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDePacientesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -101,11 +110,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
-            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -122,6 +132,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDePacientesToolStripMenuItem;
     }
 }
 

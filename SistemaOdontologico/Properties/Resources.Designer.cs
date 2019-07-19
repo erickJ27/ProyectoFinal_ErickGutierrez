@@ -63,6 +63,16 @@ namespace SistemaOdontologico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_2_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Close-2-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_group_icon1 {
             get {
                 object obj = ResourceManager.GetObject("Delete-group-icon1", resourceCulture);
@@ -86,6 +96,16 @@ namespace SistemaOdontologico.Properties {
         internal static System.Drawing.Bitmap new_file_icon1 {
             get {
                 object obj = ResourceManager.GetObject("new-file-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odontologia_umsa {
+            get {
+                object obj = ResourceManager.GetObject("odontologia-umsa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

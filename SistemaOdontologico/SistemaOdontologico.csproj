@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\rPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rPacientes.Designer.cs">
+      <DependentUpon>rPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\rPacientes.resx">
+      <DependentUpon>rPacientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rUsuarios.resx">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\odontologia-umsa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-2-icon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

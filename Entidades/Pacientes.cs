@@ -22,10 +22,10 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string ObservacionPacientes { get; set; }
-        public string AntecedentesMedicos { get; set; }
-        public string AntecedentesMedicosFamiliares { get; set; }
         public string Alergias { get; set; }
         public string Vacunas { get; set; }
+        public DateTime FechaIngreso { get; set; }
+
 
 
         public Pacientes()
@@ -42,10 +42,9 @@ namespace Entidades
             Direccion = string.Empty;
             Email = string.Empty;
             ObservacionPacientes = string.Empty;
-            AntecedentesMedicos = string.Empty;
-            AntecedentesMedicosFamiliares = string.Empty;
             Alergias = string.Empty;
             Vacunas = string.Empty;
+            FechaIngreso = DateTime.Now;
         }
 
     }

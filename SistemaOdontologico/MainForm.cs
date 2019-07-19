@@ -24,18 +24,32 @@ namespace SistemaOdontologico
         private void ConsultaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cConsultas ver = new cConsultas();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterParent;
             ver.Show();
         }
 
         private void ReportesDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptUsuarios ver = new rptUsuarios();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterParent;
             ver.Show();
         }
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rUsuarios ver = new rUsuarios();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterParent;
+            ver.Show();
+        }
+
+        private void RegistroDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rPacientes ver = new rPacientes();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterParent;
             ver.Show();
         }
     }
