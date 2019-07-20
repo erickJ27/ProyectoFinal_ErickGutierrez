@@ -76,10 +76,18 @@ namespace SistemaOdontologico.Registros
 
                 paso = false;
             }
-            if (NombresTextBox.Text == string.Empty)
+            if (NivelUsuarioComboBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(NombresTextBox, "El campo Nombre no puede estar vacio");
-                NombresTextBox.Focus();
+                MyErrorProvider.SetError(NivelUsuarioComboBox, "El campo Email no puede estar vacio");
+                NivelUsuarioComboBox.Focus();
+
+                paso = false;
+            }
+
+            if (UsuarioTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(UsuarioTextBox, "El campo usuario no puede estar vacio");
+                UsuarioTextBox.Focus();
 
                 paso = false;
             }
@@ -159,7 +167,7 @@ namespace SistemaOdontologico.Registros
             Repositorio<Usuarios> db = new Repositorio<Usuarios>();
             if (!ExisteEnLaBaseDeDatos())
             {
-                MessageBox.Show("No se puede Eliminar una asignatura que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede Eliminar un usuario que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             MyErrorProvider.Clear();

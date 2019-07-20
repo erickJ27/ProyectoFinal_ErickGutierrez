@@ -12,6 +12,7 @@ namespace DAL
     public class CentroOdontologicoContexto : DbContext
     {
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Pacientes> Pacientes { get; set; }
         public CentroOdontologicoContexto() : base("ConStr")
         {
 

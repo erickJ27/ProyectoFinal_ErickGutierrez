@@ -22,11 +22,9 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Email { get; set; }
         public string ObservacionPacientes { get; set; }
-        public string Alergias { get; set; }
-        public string Vacunas { get; set; }
+        public virtual List<PacienteAlergias> Alergias { get; set; }
+        public virtual List<PacienteVacunas> Vacunas { get; set; }
         public DateTime FechaIngreso { get; set; }
-
-
 
         public Pacientes()
         {
@@ -42,8 +40,8 @@ namespace Entidades
             Direccion = string.Empty;
             Email = string.Empty;
             ObservacionPacientes = string.Empty;
-            Alergias = string.Empty;
-            Vacunas = string.Empty;
+            Alergias = new List<PacienteAlergias>();
+            Vacunas = new List<PacienteVacunas>();
             FechaIngreso = DateTime.Now;
         }
 

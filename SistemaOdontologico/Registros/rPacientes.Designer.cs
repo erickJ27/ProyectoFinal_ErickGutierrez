@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,36 +47,38 @@
             this.MasculinoRadioButton = new System.Windows.Forms.RadioButton();
             this.FemeninoRadioButton = new System.Windows.Forms.RadioButton();
             this.FechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.GrupoSangineoComboBox = new System.Windows.Forms.ComboBox();
+            this.CedulaTextBox = new System.Windows.Forms.TextBox();
+            this.TelefonoTextBox = new System.Windows.Forms.TextBox();
+            this.CelularTextBox = new System.Windows.Forms.TextBox();
+            this.SeguroMedicoComboBox = new System.Windows.Forms.ComboBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
+            this.ObservacionTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AlergiasButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NombreAlergiaTextBox = new System.Windows.Forms.TextBox();
             this.EliminarAlergiaButton = new System.Windows.Forms.Button();
+            this.AlergiasDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.NombreVacunaTextBox = new System.Windows.Forms.TextBox();
+            this.EliminarVacunaButton = new System.Windows.Forms.Button();
+            this.VacunasDataGridView = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.VacunasButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlergiasDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VacunasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -240,64 +243,64 @@
             this.FechaNacimientoDateTimePicker.Size = new System.Drawing.Size(250, 20);
             this.FechaNacimientoDateTimePicker.TabIndex = 20;
             // 
-            // comboBox1
+            // GrupoSangineoComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 21;
+            this.GrupoSangineoComboBox.FormattingEnabled = true;
+            this.GrupoSangineoComboBox.Location = new System.Drawing.Point(123, 116);
+            this.GrupoSangineoComboBox.Name = "GrupoSangineoComboBox";
+            this.GrupoSangineoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.GrupoSangineoComboBox.TabIndex = 21;
             // 
-            // textBox2
+            // CedulaTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 22;
+            this.CedulaTextBox.Location = new System.Drawing.Point(122, 143);
+            this.CedulaTextBox.Name = "CedulaTextBox";
+            this.CedulaTextBox.Size = new System.Drawing.Size(175, 20);
+            this.CedulaTextBox.TabIndex = 22;
             // 
-            // textBox3
+            // TelefonoTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 23;
+            this.TelefonoTextBox.Location = new System.Drawing.Point(122, 169);
+            this.TelefonoTextBox.Name = "TelefonoTextBox";
+            this.TelefonoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TelefonoTextBox.TabIndex = 23;
             // 
-            // textBox4
+            // CelularTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(273, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 24;
+            this.CelularTextBox.Location = new System.Drawing.Point(273, 169);
+            this.CelularTextBox.Name = "CelularTextBox";
+            this.CelularTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CelularTextBox.TabIndex = 24;
             // 
-            // comboBox2
+            // SeguroMedicoComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(123, 195);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 25;
+            this.SeguroMedicoComboBox.FormattingEnabled = true;
+            this.SeguroMedicoComboBox.Location = new System.Drawing.Point(123, 195);
+            this.SeguroMedicoComboBox.Name = "SeguroMedicoComboBox";
+            this.SeguroMedicoComboBox.Size = new System.Drawing.Size(200, 21);
+            this.SeguroMedicoComboBox.TabIndex = 25;
             // 
-            // textBox5
+            // DireccionTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(123, 222);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 20);
-            this.textBox5.TabIndex = 26;
+            this.DireccionTextBox.Location = new System.Drawing.Point(123, 222);
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(250, 20);
+            this.DireccionTextBox.TabIndex = 26;
             // 
-            // textBox6
+            // EmailTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(123, 248);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 20);
-            this.textBox6.TabIndex = 27;
+            this.EmailTextBox.Location = new System.Drawing.Point(123, 248);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(250, 20);
+            this.EmailTextBox.TabIndex = 27;
             // 
-            // textBox7
+            // ObservacionTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(123, 274);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 104);
-            this.textBox7.TabIndex = 28;
+            this.ObservacionTextBox.Location = new System.Drawing.Point(123, 274);
+            this.ObservacionTextBox.Multiline = true;
+            this.ObservacionTextBox.Name = "ObservacionTextBox";
+            this.ObservacionTextBox.Size = new System.Drawing.Size(250, 104);
+            this.ObservacionTextBox.TabIndex = 28;
             // 
             // label14
             // 
@@ -325,12 +328,13 @@
             this.AlergiasButton.TabIndex = 41;
             this.AlergiasButton.Text = "+";
             this.AlergiasButton.UseVisualStyleBackColor = true;
+            this.AlergiasButton.Click += new System.EventHandler(this.AlergiasButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.NombreAlergiaTextBox);
             this.groupBox1.Controls.Add(this.EliminarAlergiaButton);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.AlergiasDataGridView);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.AlergiasButton);
             this.groupBox1.Location = new System.Drawing.Point(391, 15);
@@ -340,79 +344,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alergias";
             // 
-            // textBox8
+            // NombreAlergiaTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(100, 21);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 44;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(233, 94);
-            this.dataGridView1.TabIndex = 42;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(391, 212);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(271, 182);
-            this.groupBox2.TabIndex = 44;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vacunas";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(100, 21);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(121, 20);
-            this.textBox9.TabIndex = 45;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(18, 147);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Eliminar Vacuna";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 47);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(233, 94);
-            this.dataGridView2.TabIndex = 42;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 23);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Nombre Vacuna";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(227, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 23);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.NombreAlergiaTextBox.Location = new System.Drawing.Point(100, 21);
+            this.NombreAlergiaTextBox.Name = "NombreAlergiaTextBox";
+            this.NombreAlergiaTextBox.Size = new System.Drawing.Size(121, 20);
+            this.NombreAlergiaTextBox.TabIndex = 44;
             // 
             // EliminarAlergiaButton
             // 
@@ -425,6 +362,76 @@
             this.EliminarAlergiaButton.Text = "Eliminar Alergia";
             this.EliminarAlergiaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarAlergiaButton.UseVisualStyleBackColor = true;
+            this.EliminarAlergiaButton.Click += new System.EventHandler(this.EliminarAlergiaButton_Click);
+            // 
+            // AlergiasDataGridView
+            // 
+            this.AlergiasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AlergiasDataGridView.Location = new System.Drawing.Point(18, 47);
+            this.AlergiasDataGridView.Name = "AlergiasDataGridView";
+            this.AlergiasDataGridView.Size = new System.Drawing.Size(233, 94);
+            this.AlergiasDataGridView.TabIndex = 42;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.NombreVacunaTextBox);
+            this.groupBox2.Controls.Add(this.EliminarVacunaButton);
+            this.groupBox2.Controls.Add(this.VacunasDataGridView);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.VacunasButton);
+            this.groupBox2.Location = new System.Drawing.Point(391, 212);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(271, 182);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Vacunas";
+            // 
+            // NombreVacunaTextBox
+            // 
+            this.NombreVacunaTextBox.Location = new System.Drawing.Point(100, 21);
+            this.NombreVacunaTextBox.Name = "NombreVacunaTextBox";
+            this.NombreVacunaTextBox.Size = new System.Drawing.Size(121, 20);
+            this.NombreVacunaTextBox.TabIndex = 45;
+            // 
+            // EliminarVacunaButton
+            // 
+            this.EliminarVacunaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
+            this.EliminarVacunaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarVacunaButton.Location = new System.Drawing.Point(18, 147);
+            this.EliminarVacunaButton.Name = "EliminarVacunaButton";
+            this.EliminarVacunaButton.Size = new System.Drawing.Size(112, 23);
+            this.EliminarVacunaButton.TabIndex = 43;
+            this.EliminarVacunaButton.Text = "Eliminar Vacuna";
+            this.EliminarVacunaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarVacunaButton.UseVisualStyleBackColor = true;
+            this.EliminarVacunaButton.Click += new System.EventHandler(this.EliminarVacunaButton_Click);
+            // 
+            // VacunasDataGridView
+            // 
+            this.VacunasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VacunasDataGridView.Location = new System.Drawing.Point(18, 47);
+            this.VacunasDataGridView.Name = "VacunasDataGridView";
+            this.VacunasDataGridView.Size = new System.Drawing.Size(233, 94);
+            this.VacunasDataGridView.TabIndex = 42;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Nombre Vacuna";
+            // 
+            // VacunasButton
+            // 
+            this.VacunasButton.Location = new System.Drawing.Point(227, 19);
+            this.VacunasButton.Name = "VacunasButton";
+            this.VacunasButton.Size = new System.Drawing.Size(24, 23);
+            this.VacunasButton.TabIndex = 41;
+            this.VacunasButton.Text = "+";
+            this.VacunasButton.UseVisualStyleBackColor = true;
+            this.VacunasButton.Click += new System.EventHandler(this.VacunasButton_Click);
             // 
             // BuscarButton
             // 
@@ -437,6 +444,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // EliminarButton
             // 
@@ -449,6 +457,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -461,6 +470,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -473,6 +483,11 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rPacientes
             // 
@@ -487,14 +502,14 @@
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.FechaIngresoDateTimePicker);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ObservacionTextBox);
+            this.Controls.Add(this.EmailTextBox);
+            this.Controls.Add(this.DireccionTextBox);
+            this.Controls.Add(this.SeguroMedicoComboBox);
+            this.Controls.Add(this.CelularTextBox);
+            this.Controls.Add(this.TelefonoTextBox);
+            this.Controls.Add(this.CedulaTextBox);
+            this.Controls.Add(this.GrupoSangineoComboBox);
             this.Controls.Add(this.FechaNacimientoDateTimePicker);
             this.Controls.Add(this.FemeninoRadioButton);
             this.Controls.Add(this.MasculinoRadioButton);
@@ -518,10 +533,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlergiasDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VacunasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,14 +563,14 @@
         private System.Windows.Forms.RadioButton MasculinoRadioButton;
         private System.Windows.Forms.RadioButton FemeninoRadioButton;
         private System.Windows.Forms.DateTimePicker FechaNacimientoDateTimePicker;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox GrupoSangineoComboBox;
+        private System.Windows.Forms.TextBox CedulaTextBox;
+        private System.Windows.Forms.TextBox TelefonoTextBox;
+        private System.Windows.Forms.TextBox CelularTextBox;
+        private System.Windows.Forms.ComboBox SeguroMedicoComboBox;
+        private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.TextBox EmailTextBox;
+        private System.Windows.Forms.TextBox ObservacionTextBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker FechaIngresoDateTimePicker;
         private System.Windows.Forms.Button NuevoButton;
@@ -563,14 +579,15 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button AlergiasButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox NombreAlergiaTextBox;
         private System.Windows.Forms.Button EliminarAlergiaButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView AlergiasDataGridView;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox NombreVacunaTextBox;
+        private System.Windows.Forms.Button EliminarVacunaButton;
+        private System.Windows.Forms.DataGridView VacunasDataGridView;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button VacunasButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

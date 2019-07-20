@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="PacienteAlergias.cs" />
     <Compile Include="Pacientes.cs" />
+    <Compile Include="PacienteVacunas.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
