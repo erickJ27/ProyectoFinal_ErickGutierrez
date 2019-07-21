@@ -74,6 +74,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\rEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rEspecialidades.Designer.cs">
+      <DependentUpon>rEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rOdontologos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rOdontologos.Designer.cs">
+      <DependentUpon>rOdontologos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\rEspecialidades.resx">
+      <DependentUpon>rEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rOdontologos.resx">
+      <DependentUpon>rOdontologos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rPacientes.resx">
       <DependentUpon>rPacientes.cs</DependentUpon>
     </EmbeddedResource>

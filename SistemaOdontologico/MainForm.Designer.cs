@@ -31,11 +31,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeUsuariosToolStripMenuItem,
-            this.registroDePacientesToolStripMenuItem});
+            this.registroDePacientesToolStripMenuItem,
+            this.registroDeOdontologosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -63,9 +65,16 @@
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
+            // 
+            // registroDePacientesToolStripMenuItem
+            // 
+            this.registroDePacientesToolStripMenuItem.Name = "registroDePacientesToolStripMenuItem";
+            this.registroDePacientesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDePacientesToolStripMenuItem.Text = "Registro de Pacientes";
+            this.registroDePacientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDePacientesToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -97,12 +106,12 @@
             this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuario";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
             // 
-            // registroDePacientesToolStripMenuItem
+            // registroDeOdontologosToolStripMenuItem
             // 
-            this.registroDePacientesToolStripMenuItem.Name = "registroDePacientesToolStripMenuItem";
-            this.registroDePacientesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.registroDePacientesToolStripMenuItem.Text = "Registro de Pacientes";
-            this.registroDePacientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDePacientesToolStripMenuItem_Click);
+            this.registroDeOdontologosToolStripMenuItem.Name = "registroDeOdontologosToolStripMenuItem";
+            this.registroDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDeOdontologosToolStripMenuItem.Text = "Registro de Odontologos";
+            this.registroDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeOdontologosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -133,6 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDePacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeOdontologosToolStripMenuItem;
     }
 }
 

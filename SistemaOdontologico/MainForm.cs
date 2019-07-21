@@ -52,5 +52,13 @@ namespace SistemaOdontologico
             ver.StartPosition = FormStartPosition.CenterParent;
             ver.Show();
         }
+
+        private void RegistroDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rOdontologos ver = new rOdontologos();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterParent;
+            ver.Show();
+        }
     }
 }
