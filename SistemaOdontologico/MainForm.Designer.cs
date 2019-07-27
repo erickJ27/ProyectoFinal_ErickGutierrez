@@ -32,11 +32,11 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,13 @@
             this.registroDePacientesToolStripMenuItem.Text = "Registro de Pacientes";
             this.registroDePacientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDePacientesToolStripMenuItem_Click);
             // 
+            // registroDeOdontologosToolStripMenuItem
+            // 
+            this.registroDeOdontologosToolStripMenuItem.Name = "registroDeOdontologosToolStripMenuItem";
+            this.registroDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDeOdontologosToolStripMenuItem.Text = "Registro de Odontologos";
+            this.registroDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeOdontologosToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -106,20 +113,14 @@
             this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuario";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
             // 
-            // registroDeOdontologosToolStripMenuItem
-            // 
-            this.registroDeOdontologosToolStripMenuItem.Name = "registroDeOdontologosToolStripMenuItem";
-            this.registroDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.registroDeOdontologosToolStripMenuItem.Text = "Registro de Odontologos";
-            this.registroDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeOdontologosToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SistemaOdontologico.Properties.Resources.odontologia_umsa;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

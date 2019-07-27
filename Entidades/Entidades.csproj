@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas.cs" />
+    <Compile Include="ConsultasM.cs" />
     <Compile Include="Especialidades.cs" />
+    <Compile Include="Materiales.cs" />
+    <Compile Include="MaterialesDetalle.cs" />
     <Compile Include="Odontologos.cs" />
     <Compile Include="PacienteAlergias.cs" />
     <Compile Include="Pacientes.cs" />

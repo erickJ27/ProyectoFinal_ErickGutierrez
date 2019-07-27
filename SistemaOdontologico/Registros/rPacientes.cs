@@ -200,6 +200,7 @@ namespace SistemaOdontologico.Registros
 
         private void AlergiasButton_Click(object sender, EventArgs e)
         {
+
             List<PacienteAlergias> detalles = new List<PacienteAlergias>();
             Repositorio<Pacientes> db = new Repositorio<Pacientes>(new DAL.CentroOdontologicoContexto());
             if(AlergiasDataGridView.DataSource != null)

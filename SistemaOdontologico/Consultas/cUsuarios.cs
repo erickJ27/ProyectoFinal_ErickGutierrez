@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SistemaOdontologico.Consultas
 {
-    public partial class cConsultas : Form
+    public partial class cUsuarios : Form
     {
-        public cConsultas()
+        public cUsuarios()
         {
             InitializeComponent();
         }

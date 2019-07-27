@@ -60,11 +60,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\cConsultas.cs">
+    <Compile Include="Consultas\cUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\cConsultas.Designer.cs">
-      <DependentUpon>cConsultas.cs</DependentUpon>
+    <Compile Include="Consultas\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPacientes.Designer.cs">
+      <DependentUpon>cPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -74,11 +86,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\rConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rConsultas.Designer.cs">
+      <DependentUpon>rConsultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registros\rEspecialidades.Designer.cs">
       <DependentUpon>rEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rMateriales.Designer.cs">
+      <DependentUpon>rMateriales.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\rOdontologos.cs">
       <SubType>Form</SubType>
@@ -110,8 +134,14 @@
     <Compile Include="Reportes\rptUsuarios.Designer.cs">
       <DependentUpon>rptUsuarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Consultas\cConsultas.resx">
-      <DependentUpon>cConsultas.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\cPacientes.resx">
+      <DependentUpon>cPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cUsuarios.resx">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -126,8 +156,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\rConsultas.resx">
+      <DependentUpon>rConsultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\rEspecialidades.resx">
       <DependentUpon>rEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rMateriales.resx">
+      <DependentUpon>rMateriales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rOdontologos.resx">
       <DependentUpon>rOdontologos.cs</DependentUpon>

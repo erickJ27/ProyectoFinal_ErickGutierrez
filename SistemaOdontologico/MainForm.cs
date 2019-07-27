@@ -23,42 +23,44 @@ namespace SistemaOdontologico
 
         private void ConsultaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cConsultas ver = new cConsultas();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterParent;
+            cUsuarios ver = new cUsuarios();
+            //ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
 
         private void ReportesDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptUsuarios ver = new rptUsuarios();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterParent;
+            //ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rUsuarios ver = new rUsuarios();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterParent;
+            //ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
 
         private void RegistroDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rPacientes ver = new rPacientes();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterParent;
+            //ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
 
         private void RegistroDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rOdontologos ver = new rOdontologos();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterParent;
+            //ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
+
+       
     }
 }
