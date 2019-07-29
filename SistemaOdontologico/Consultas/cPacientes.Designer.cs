@@ -40,13 +40,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ImprimirButton = new System.Windows.Forms.Button();
             this.ConsultarButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FiltrarFechaCheckBox
             // 
             this.FiltrarFechaCheckBox.AutoSize = true;
-            this.FiltrarFechaCheckBox.Location = new System.Drawing.Point(217, 27);
+            this.FiltrarFechaCheckBox.Location = new System.Drawing.Point(18, 12);
             this.FiltrarFechaCheckBox.Name = "FiltrarFechaCheckBox";
             this.FiltrarFechaCheckBox.Size = new System.Drawing.Size(84, 17);
             this.FiltrarFechaCheckBox.TabIndex = 33;
@@ -56,14 +60,14 @@
             // UsuariosDataGridView
             // 
             this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsuariosDataGridView.Location = new System.Drawing.Point(15, 51);
+            this.UsuariosDataGridView.Location = new System.Drawing.Point(15, 99);
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
             this.UsuariosDataGridView.Size = new System.Drawing.Size(702, 333);
             this.UsuariosDataGridView.TabIndex = 32;
             // 
             // CriterioTextBox
             // 
-            this.CriterioTextBox.Location = new System.Drawing.Point(434, 25);
+            this.CriterioTextBox.Location = new System.Drawing.Point(134, 35);
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(113, 20);
             this.CriterioTextBox.TabIndex = 31;
@@ -77,7 +81,7 @@
             "Nombres",
             "Email",
             "Usario"});
-            this.FiltroComboBox.Location = new System.Drawing.Point(307, 24);
+            this.FiltroComboBox.Location = new System.Drawing.Point(7, 34);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
             this.FiltroComboBox.TabIndex = 30;
@@ -86,7 +90,7 @@
             // 
             this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(116, 25);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(111, 32);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
             this.HastaDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.HastaDateTimePicker.TabIndex = 29;
@@ -95,7 +99,7 @@
             // 
             this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(15, 25);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(10, 32);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.DesdeDateTimePicker.TabIndex = 28;
@@ -103,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(431, 8);
+            this.label4.Location = new System.Drawing.Point(131, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 27;
@@ -112,7 +116,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(304, 8);
+            this.label3.Location = new System.Drawing.Point(4, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 26;
@@ -121,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 9);
+            this.label2.Location = new System.Drawing.Point(108, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 25;
@@ -130,7 +134,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 24;
@@ -140,7 +144,7 @@
             // 
             this.ImprimirButton.Image = global::SistemaOdontologico.Properties.Resources.print_icon;
             this.ImprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ImprimirButton.Location = new System.Drawing.Point(636, 24);
+            this.ImprimirButton.Location = new System.Drawing.Point(636, 72);
             this.ImprimirButton.Name = "ImprimirButton";
             this.ImprimirButton.Size = new System.Drawing.Size(69, 23);
             this.ImprimirButton.TabIndex = 35;
@@ -152,7 +156,7 @@
             // 
             this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.Microsoft_Query_icon;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarButton.Location = new System.Drawing.Point(553, 24);
+            this.ConsultarButton.Location = new System.Drawing.Point(555, 53);
             this.ConsultarButton.Name = "ConsultarButton";
             this.ConsultarButton.Size = new System.Drawing.Size(77, 23);
             this.ConsultarButton.TabIndex = 34;
@@ -160,26 +164,48 @@
             this.ConsultarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ConsultarButton.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.DesdeDateTimePicker);
+            this.groupBox1.Controls.Add(this.HastaDateTimePicker);
+            this.groupBox1.Location = new System.Drawing.Point(12, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(246, 69);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.FiltroComboBox);
+            this.groupBox2.Controls.Add(this.CriterioTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(264, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(285, 71);
+            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabStop = false;
+            // 
             // cPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.FiltrarFechaCheckBox);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.ConsultarButton);
-            this.Controls.Add(this.FiltrarFechaCheckBox);
             this.Controls.Add(this.UsuariosDataGridView);
-            this.Controls.Add(this.CriterioTextBox);
-            this.Controls.Add(this.FiltroComboBox);
-            this.Controls.Add(this.HastaDateTimePicker);
-            this.Controls.Add(this.DesdeDateTimePicker);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "cPacientes";
             this.Text = "Consulta de Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +225,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

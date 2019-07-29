@@ -61,6 +61,11 @@ namespace SistemaOdontologico
             ver.Show();
         }
 
-       
+        private void RegistroDeConsultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rConsultas ver = new rConsultas();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
     }
 }

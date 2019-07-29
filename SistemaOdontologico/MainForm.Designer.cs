@@ -37,6 +37,7 @@
             this.consultaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeUsuariosToolStripMenuItem,
             this.registroDePacientesToolStripMenuItem,
-            this.registroDeOdontologosToolStripMenuItem});
+            this.registroDeOdontologosToolStripMenuItem,
+            this.registroDeConsultasToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -113,6 +115,13 @@
             this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuario";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
             // 
+            // registroDeConsultasToolStripMenuItem
+            // 
+            this.registroDeConsultasToolStripMenuItem.Name = "registroDeConsultasToolStripMenuItem";
+            this.registroDeConsultasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDeConsultasToolStripMenuItem.Text = "Registro de Consultas";
+            this.registroDeConsultasToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeConsultasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +153,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportesDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDePacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeOdontologosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeConsultasToolStripMenuItem;
     }
 }
 

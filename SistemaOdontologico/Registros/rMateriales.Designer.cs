@@ -159,6 +159,11 @@
             // CostoUNumericUpDown
             // 
             this.CostoUNumericUpDown.Location = new System.Drawing.Point(96, 99);
+            this.CostoUNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.CostoUNumericUpDown.Name = "CostoUNumericUpDown";
             this.CostoUNumericUpDown.Size = new System.Drawing.Size(167, 20);
             this.CostoUNumericUpDown.TabIndex = 49;

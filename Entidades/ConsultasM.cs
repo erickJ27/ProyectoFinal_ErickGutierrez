@@ -40,6 +40,8 @@ namespace Entidades
             Materiales = new List<MaterialesDetalle>();
         }
 
+        
+
 
 
     }

@@ -37,7 +37,7 @@ namespace SistemaOdontologico.Registros
         {
             Odontologos odontologos = new Odontologos();
 
-            odontologos.OdontolodoId = (int)IdNumericUpDown.Value;
+            odontologos.OdontologoId = (int)IdNumericUpDown.Value;
             odontologos.Nombres = NombresTextBox.Text;
             odontologos.Cedula = CedulaTextBox.Text;
             odontologos.Telefono = TelefonoTextBox.Text;
@@ -104,7 +104,7 @@ namespace SistemaOdontologico.Registros
         }
         private void LlenarCampo(Odontologos odontologos)
         {
-            IdNumericUpDown.Value = odontologos.OdontolodoId;
+            IdNumericUpDown.Value = odontologos.OdontologoId;
             NombresTextBox.Text = odontologos.Nombres;
             CedulaTextBox.Text = odontologos.Cedula;
             TelefonoTextBox.Text = odontologos.Telefono;

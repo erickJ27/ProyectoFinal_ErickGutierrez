@@ -15,6 +15,8 @@ namespace Entidades
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal Importe { get; set; }
+        public decimal Itbis { get; set; }
+
         
         public MaterialesDetalle()
         {
@@ -23,6 +25,7 @@ namespace Entidades
             Descripcion = string.Empty;
             Cantidad = 0;
             Importe = 0;
+            Itbis = 0;
         }
 
 

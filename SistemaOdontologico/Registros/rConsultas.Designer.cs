@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.EliminarMaterialButton = new System.Windows.Forms.Button();
+            this.AgregarMaterialesButton = new System.Windows.Forms.Button();
             this.MaterialesDataGridView = new System.Windows.Forms.DataGridView();
             this.AgregarDetalleButton = new System.Windows.Forms.Button();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -51,22 +56,24 @@
             this.DiagnosticoTextBox = new System.Windows.Forms.TextBox();
             this.ObservacionTextBox = new System.Windows.Forms.TextBox();
             this.TratamientoTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.SubTotalTextBox = new System.Windows.Forms.TextBox();
-            this.ItbisTextBox = new System.Windows.Forms.TextBox();
-            this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.EliminarAlergiaButton = new System.Windows.Forms.Button();
+            this.NuevoPacienteButton = new System.Windows.Forms.Button();
+            this.NuevoOdontologoButton = new System.Windows.Forms.Button();
+            this.SubTotalTextBox = new System.Windows.Forms.TextBox();
+            this.ItibisTextBox = new System.Windows.Forms.TextBox();
+            this.TotalTextBox = new System.Windows.Forms.TextBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaterialesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(376, 18);
+            this.label6.Location = new System.Drawing.Point(390, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 5;
@@ -126,7 +133,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(376, 347);
+            this.label7.Location = new System.Drawing.Point(390, 347);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 6;
@@ -135,7 +142,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(376, 174);
+            this.label8.Location = new System.Drawing.Point(390, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 7;
@@ -152,8 +159,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.EliminarAlergiaButton);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.PrecioTextBox);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.EliminarMaterialButton);
+            this.groupBox1.Controls.Add(this.AgregarMaterialesButton);
             this.groupBox1.Controls.Add(this.MaterialesDataGridView);
             this.groupBox1.Controls.Add(this.AgregarDetalleButton);
             this.groupBox1.Controls.Add(this.CantidadNumericUpDown);
@@ -162,30 +171,70 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(12, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 211);
+            this.groupBox1.Size = new System.Drawing.Size(372, 211);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // PrecioTextBox
+            // 
+            this.PrecioTextBox.Location = new System.Drawing.Point(175, 33);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(71, 20);
+            this.PrecioTextBox.TabIndex = 47;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(172, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Precio";
+            // 
+            // EliminarMaterialButton
+            // 
+            this.EliminarMaterialButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
+            this.EliminarMaterialButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarMaterialButton.Location = new System.Drawing.Point(9, 182);
+            this.EliminarMaterialButton.Name = "EliminarMaterialButton";
+            this.EliminarMaterialButton.Size = new System.Drawing.Size(107, 23);
+            this.EliminarMaterialButton.TabIndex = 44;
+            this.EliminarMaterialButton.Text = "Eliminar Material";
+            this.EliminarMaterialButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarMaterialButton.UseVisualStyleBackColor = true;
+            this.EliminarMaterialButton.Click += new System.EventHandler(this.EliminarMaterialButton_Click);
+            // 
+            // AgregarMaterialesButton
+            // 
+            this.AgregarMaterialesButton.Location = new System.Drawing.Point(136, 33);
+            this.AgregarMaterialesButton.Name = "AgregarMaterialesButton";
+            this.AgregarMaterialesButton.Size = new System.Drawing.Size(32, 23);
+            this.AgregarMaterialesButton.TabIndex = 14;
+            this.AgregarMaterialesButton.Text = "+";
+            this.AgregarMaterialesButton.UseVisualStyleBackColor = true;
+            this.AgregarMaterialesButton.Click += new System.EventHandler(this.AgregarMaterialesButton_Click);
             // 
             // MaterialesDataGridView
             // 
             this.MaterialesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MaterialesDataGridView.Location = new System.Drawing.Point(9, 61);
             this.MaterialesDataGridView.Name = "MaterialesDataGridView";
-            this.MaterialesDataGridView.Size = new System.Drawing.Size(308, 115);
+            this.MaterialesDataGridView.Size = new System.Drawing.Size(351, 115);
             this.MaterialesDataGridView.TabIndex = 13;
             // 
             // AgregarDetalleButton
             // 
-            this.AgregarDetalleButton.Location = new System.Drawing.Point(285, 32);
+            this.AgregarDetalleButton.Location = new System.Drawing.Point(328, 32);
             this.AgregarDetalleButton.Name = "AgregarDetalleButton";
             this.AgregarDetalleButton.Size = new System.Drawing.Size(32, 23);
             this.AgregarDetalleButton.TabIndex = 12;
             this.AgregarDetalleButton.Text = "+";
             this.AgregarDetalleButton.UseVisualStyleBackColor = true;
+            this.AgregarDetalleButton.Click += new System.EventHandler(this.AgregarDetalleButton_Click);
             // 
             // CantidadNumericUpDown
             // 
-            this.CantidadNumericUpDown.Location = new System.Drawing.Point(229, 33);
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(272, 33);
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(50, 20);
             this.CantidadNumericUpDown.TabIndex = 11;
@@ -193,7 +242,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(174, 38);
+            this.label10.Location = new System.Drawing.Point(267, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 10;
@@ -206,6 +255,7 @@
             this.MaterialesComboBox.Name = "MaterialesComboBox";
             this.MaterialesComboBox.Size = new System.Drawing.Size(121, 21);
             this.MaterialesComboBox.TabIndex = 9;
+            this.MaterialesComboBox.SelectedIndexChanged += new System.EventHandler(this.MaterialesComboBox_SelectedIndexChanged);
             // 
             // IdNumericUpDown
             // 
@@ -250,7 +300,7 @@
             // 
             // DiagnosticoTextBox
             // 
-            this.DiagnosticoTextBox.Location = new System.Drawing.Point(379, 33);
+            this.DiagnosticoTextBox.Location = new System.Drawing.Point(393, 33);
             this.DiagnosticoTextBox.Multiline = true;
             this.DiagnosticoTextBox.Name = "DiagnosticoTextBox";
             this.DiagnosticoTextBox.Size = new System.Drawing.Size(181, 114);
@@ -258,7 +308,7 @@
             // 
             // ObservacionTextBox
             // 
-            this.ObservacionTextBox.Location = new System.Drawing.Point(379, 190);
+            this.ObservacionTextBox.Location = new System.Drawing.Point(393, 190);
             this.ObservacionTextBox.Multiline = true;
             this.ObservacionTextBox.Name = "ObservacionTextBox";
             this.ObservacionTextBox.Size = new System.Drawing.Size(187, 137);
@@ -266,32 +316,24 @@
             // 
             // TratamientoTextBox
             // 
-            this.TratamientoTextBox.Location = new System.Drawing.Point(379, 363);
+            this.TratamientoTextBox.Location = new System.Drawing.Point(393, 363);
             this.TratamientoTextBox.Multiline = true;
             this.TratamientoTextBox.Name = "TratamientoTextBox";
             this.TratamientoTextBox.Size = new System.Drawing.Size(187, 103);
             this.TratamientoTextBox.TabIndex = 17;
             // 
-            // button2
+            // BuscarButton
             // 
-            this.button2.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(225, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Buscar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(136, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BuscarButton.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(225, 16);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(66, 23);
+            this.BuscarButton.TabIndex = 18;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // label11
             // 
@@ -305,7 +347,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(125, 376);
+            this.label12.Location = new System.Drawing.Point(145, 376);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 13);
             this.label12.TabIndex = 20;
@@ -314,38 +356,17 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(238, 376);
+            this.label13.Location = new System.Drawing.Point(262, 376);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 13);
             this.label13.TabIndex = 21;
             this.label13.Text = "Total";
             // 
-            // SubTotalTextBox
-            // 
-            this.SubTotalTextBox.Location = new System.Drawing.Point(21, 392);
-            this.SubTotalTextBox.Name = "SubTotalTextBox";
-            this.SubTotalTextBox.Size = new System.Drawing.Size(79, 20);
-            this.SubTotalTextBox.TabIndex = 22;
-            // 
-            // ItbisTextBox
-            // 
-            this.ItbisTextBox.Location = new System.Drawing.Point(128, 392);
-            this.ItbisTextBox.Name = "ItbisTextBox";
-            this.ItbisTextBox.Size = new System.Drawing.Size(79, 20);
-            this.ItbisTextBox.TabIndex = 23;
-            // 
-            // TotalTextBox
-            // 
-            this.TotalTextBox.Location = new System.Drawing.Point(241, 392);
-            this.TotalTextBox.Name = "TotalTextBox";
-            this.TotalTextBox.Size = new System.Drawing.Size(79, 20);
-            this.TotalTextBox.TabIndex = 24;
-            // 
             // NuevoButton
             // 
             this.NuevoButton.Image = global::SistemaOdontologico.Properties.Resources.new_file_icon1;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(43, 443);
+            this.NuevoButton.Location = new System.Drawing.Point(58, 439);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(64, 23);
             this.NuevoButton.TabIndex = 46;
@@ -358,52 +379,89 @@
             // 
             this.GuardarButton.Image = global::SistemaOdontologico.Properties.Resources.Save_icon1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(138, 443);
+            this.GuardarButton.Location = new System.Drawing.Point(153, 439);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(70, 23);
             this.GuardarButton.TabIndex = 45;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(239, 443);
+            this.EliminarButton.Location = new System.Drawing.Point(254, 439);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(67, 23);
             this.EliminarButton.TabIndex = 44;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // EliminarAlergiaButton
+            // NuevoPacienteButton
             // 
-            this.EliminarAlergiaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
-            this.EliminarAlergiaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarAlergiaButton.Location = new System.Drawing.Point(9, 182);
-            this.EliminarAlergiaButton.Name = "EliminarAlergiaButton";
-            this.EliminarAlergiaButton.Size = new System.Drawing.Size(107, 23);
-            this.EliminarAlergiaButton.TabIndex = 44;
-            this.EliminarAlergiaButton.Text = "Eliminar Material";
-            this.EliminarAlergiaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarAlergiaButton.UseVisualStyleBackColor = true;
+            this.NuevoPacienteButton.Location = new System.Drawing.Point(335, 40);
+            this.NuevoPacienteButton.Name = "NuevoPacienteButton";
+            this.NuevoPacienteButton.Size = new System.Drawing.Size(25, 23);
+            this.NuevoPacienteButton.TabIndex = 47;
+            this.NuevoPacienteButton.Text = "+";
+            this.NuevoPacienteButton.UseVisualStyleBackColor = true;
+            this.NuevoPacienteButton.Click += new System.EventHandler(this.NuevoPacienteButton_Click);
+            // 
+            // NuevoOdontologoButton
+            // 
+            this.NuevoOdontologoButton.Location = new System.Drawing.Point(335, 69);
+            this.NuevoOdontologoButton.Name = "NuevoOdontologoButton";
+            this.NuevoOdontologoButton.Size = new System.Drawing.Size(25, 23);
+            this.NuevoOdontologoButton.TabIndex = 48;
+            this.NuevoOdontologoButton.Text = "+";
+            this.NuevoOdontologoButton.UseVisualStyleBackColor = true;
+            this.NuevoOdontologoButton.Click += new System.EventHandler(this.NuevoOdontologoButton_Click);
+            // 
+            // SubTotalTextBox
+            // 
+            this.SubTotalTextBox.Location = new System.Drawing.Point(21, 392);
+            this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SubTotalTextBox.TabIndex = 49;
+            // 
+            // ItibisTextBox
+            // 
+            this.ItibisTextBox.Location = new System.Drawing.Point(145, 392);
+            this.ItibisTextBox.Name = "ItibisTextBox";
+            this.ItibisTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ItibisTextBox.TabIndex = 50;
+            // 
+            // TotalTextBox
+            // 
+            this.TotalTextBox.Location = new System.Drawing.Point(265, 392);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TotalTextBox.TabIndex = 51;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 489);
+            this.Controls.Add(this.TotalTextBox);
+            this.Controls.Add(this.ItibisTextBox);
+            this.Controls.Add(this.SubTotalTextBox);
+            this.Controls.Add(this.NuevoOdontologoButton);
+            this.Controls.Add(this.NuevoPacienteButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.TotalTextBox);
-            this.Controls.Add(this.ItbisTextBox);
-            this.Controls.Add(this.SubTotalTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.TratamientoTextBox);
             this.Controls.Add(this.ObservacionTextBox);
             this.Controls.Add(this.DiagnosticoTextBox);
@@ -422,12 +480,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rConsultas";
-            this.Text = "rConsultas";
+            this.Text = "Registro de Consultas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaterialesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,17 +517,22 @@
         private System.Windows.Forms.TextBox DiagnosticoTextBox;
         private System.Windows.Forms.TextBox ObservacionTextBox;
         private System.Windows.Forms.TextBox TratamientoTextBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button AgregarMaterialesButton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox SubTotalTextBox;
-        private System.Windows.Forms.TextBox ItbisTextBox;
-        private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button EliminarAlergiaButton;
+        private System.Windows.Forms.Button EliminarMaterialButton;
+        private System.Windows.Forms.Button NuevoPacienteButton;
+        private System.Windows.Forms.Button NuevoOdontologoButton;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox SubTotalTextBox;
+        private System.Windows.Forms.TextBox ItibisTextBox;
+        private System.Windows.Forms.TextBox TotalTextBox;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

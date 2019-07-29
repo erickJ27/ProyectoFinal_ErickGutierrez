@@ -10,7 +10,7 @@ namespace Entidades
     public class Odontologos
     {
         [Key]
-        public int OdontolodoId { get; set; }
+        public int OdontologoId { get; set; }
         public string Nombres { get; set; }
         public string Cedula { get; set; }
         public string Telefono { get; set; }
@@ -22,7 +22,7 @@ namespace Entidades
 
         public Odontologos()
         {
-            OdontolodoId = 0;
+            OdontologoId = 0;
             Nombres = string.Empty;
             Cedula = string.Empty;
             Telefono = string.Empty;
