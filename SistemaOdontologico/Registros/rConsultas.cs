@@ -222,19 +222,7 @@ namespace SistemaOdontologico.Registros
             }
             SubTotalTextBox.Text = subtotal.ToString();
         }
-        public void CalcularExistencia()
-        {
-            
-            Materiales m = new Materiales();
-            
-            Repositorio<>
-            foreach (var item in Detalle)
-            {
-               
-                m.Existencia -=item.Cantidad; 
-            }
-            
-        }
+        
         public string id_mat;
         private bool ExisteEnGrid()
         {
@@ -268,7 +256,6 @@ namespace SistemaOdontologico.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Repositorio<ConsultasM> db = new Repositorio<ConsultasM>();
             ConsultasM c = new ConsultasM();
             if (!Validar())
                 return;
@@ -276,7 +263,7 @@ namespace SistemaOdontologico.Registros
             c = LLenarClase();
             if (IdNumericUpDown.Value == 0)
             {
-                paso = db.Guardar(c);
+                paso = ConsultaMBLL.Guardar(c);
             }
             else
             {
@@ -285,7 +272,7 @@ namespace SistemaOdontologico.Registros
                     MessageBox.Show("No se puede modificar una consulta que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = db.Modificar(c);
+                paso = ConsultaMBLL.Modificar(c);
             }
             if (!ExisteEnLaBaseDeDatos())
             {

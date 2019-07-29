@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultaMBLL.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="ConsultaMBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
   </ItemGroup>

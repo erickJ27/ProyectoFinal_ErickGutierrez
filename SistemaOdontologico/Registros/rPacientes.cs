@@ -45,9 +45,9 @@ namespace SistemaOdontologico.Registros
             FemeninoRadioButton.Checked = false;
             FechaNacimientoDateTimePicker.Value = DateTime.Now;
             GrupoSangineoComboBox.Text = string.Empty;
-            CedulaTextBox.Text = string.Empty;
-            TelefonoTextBox.Text = string.Empty;
-            CelularTextBox.Text = string.Empty;
+            CedulaMaskedTextBox.Text = string.Empty;
+            TelefonoMaskedTextBox.Text = string.Empty;
+            CelularMaskedTextBox.Text = string.Empty;
             SeguroMedicoComboBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
@@ -77,10 +77,10 @@ namespace SistemaOdontologico.Registros
 
             pacientes.FechaNacimiento = FechaNacimientoDateTimePicker.Value;
             pacientes.GrupoSanguineo = GrupoSangineoComboBox.Text;
-            pacientes.Cedula = CedulaTextBox.Text;
-            pacientes.Telefono = TelefonoTextBox.Text;
-            pacientes.Celular = CelularTextBox.Text;
-            pacientes.Cedula = CelularTextBox.Text;
+            pacientes.Cedula = CedulaMaskedTextBox.Text;
+            pacientes.Telefono = TelefonoMaskedTextBox.Text;
+            pacientes.Celular = CelularMaskedTextBox.Text;
+            pacientes.Cedula = CedulaMaskedTextBox.Text;
             pacientes.SeguroMedico = SeguroMedicoComboBox.Text;
             pacientes.Direccion = DireccionTextBox.Text;
             pacientes.Email = EmailTextBox.Text;
@@ -111,9 +111,9 @@ namespace SistemaOdontologico.Registros
 
             FechaNacimientoDateTimePicker.Value = pacientes.FechaNacimiento;
             GrupoSangineoComboBox.Text = pacientes.GrupoSanguineo;
-            CedulaTextBox.Text = pacientes.Cedula;
-            TelefonoTextBox.Text = pacientes.Telefono;
-            CelularTextBox.Text = pacientes.Celular;
+            CedulaMaskedTextBox.Text = pacientes.Cedula;
+            TelefonoMaskedTextBox.Text = pacientes.Telefono;
+            CelularMaskedTextBox.Text = pacientes.Celular;
             SeguroMedicoComboBox.Text = pacientes.SeguroMedico;
             DireccionTextBox.Text = pacientes.Direccion;
             EmailTextBox.Text = pacientes.Email;
@@ -151,22 +151,22 @@ namespace SistemaOdontologico.Registros
                 GrupoSangineoComboBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(CedulaTextBox, "El campo Cedula no puede estar vacio");
-                CedulaTextBox.Focus();
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "El campo Cedula no puede estar vacio");
+                CedulaMaskedTextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonoTextBox.Text))
+            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(TelefonoTextBox, "El campo Telefono no puede estar vacio");
-                TelefonoTextBox.Focus();
+                MyErrorProvider.SetError(TelefonoMaskedTextBox, "El campo Telefono no puede estar vacio");
+                TelefonoMaskedTextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularTextBox.Text))
+            if (string.IsNullOrWhiteSpace(CelularMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(CelularTextBox, "El campo Celular no puede estar vacio");
-                CelularTextBox.Focus();
+                MyErrorProvider.SetError(CelularMaskedTextBox, "El campo Celular no puede estar vacio");
+                CelularMaskedTextBox.Focus();
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(SeguroMedicoComboBox.Text))
@@ -210,11 +210,11 @@ namespace SistemaOdontologico.Registros
             {
                 Id = 0,
                 PacienteId = (int)IdNumericUpDown.Value,
-                Descripcion = NombreAlergiaTextBox.Text
+                Descripcion = NombreAlergiaComboBox.Text
             });
 
             CargarGrid1();
-            NombreAlergiaTextBox.Text = string.Empty;
+            NombreAlergiaComboBox.Text = string.Empty;
         }
 
         private void EliminarAlergiaButton_Click(object sender, EventArgs e)
@@ -239,11 +239,11 @@ namespace SistemaOdontologico.Registros
             {
                 Id = 0,
                 PacienteId = (int)IdNumericUpDown.Value,
-                Descripcion = NombreVacunaTextBox.Text
+                Descripcion = NombreVacunaComboBox.Text
             });
 
             CargarGrid2();
-            NombreVacunaTextBox.Text = string.Empty;
+            NombreVacunaComboBox.Text = string.Empty;
         }
 
         private void EliminarVacunaButton_Click(object sender, EventArgs e)

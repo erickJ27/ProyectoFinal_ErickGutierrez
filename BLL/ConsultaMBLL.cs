@@ -5,29 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using DAL;
+using System.Data.Entity;
+using System.Linq.Expressions;
 
 namespace BLL
 {
     public class ConsultaMBLL
     {
-/*
-        public static bool Guardar(ConsultasM c)
+
+
+
+        public static bool Guardar(ConsultasM consultas)
         {
             bool paso = false;
             CentroOdontologicoContexto db = new CentroOdontologicoContexto();
             try
             {
-                Repositorio<Materiales> dbEst = new Repositorio<Materiales>(new DAL.CentroOdontologicoContexto());
+                Repositorio<Materiales> prod = new Repositorio<Materiales>();
 
-                if (db.ConsultasM.Add(c) != null)
+
+
+                if (db.ConsultasM.Add(consultas) != null)
                 {
-                    Materiales material = new Materiales();
-                    var materiales = dbEst.Buscar(material.MaterialId);
 
-                    //c.CalcularMonto();
-                    //c.Balance += c.Monto;
-                    //paso = db.SaveChanges() > 0;
-                    //dbEst.Modificar(estudiantes);
+                    foreach (var item in consultas.Materiales)
+                    {
+                        var material = prod.Buscar(item.Id);
+                        material.Existencia = material.Existencia - item.Cantidad;
+                        prod.Modificar(material);
+
+                    }
+
+                    paso = db.SaveChanges() > 0;
                 }
 
             }
@@ -38,98 +47,31 @@ namespace BLL
 
             return paso;
         }
-        public static bool Modificar(Inscripciones entity)
-        {
-            bool paso = false;
-            Contexto db = new Contexto();
-            Repositorio<Estudiantes> dbE = new Repositorio<Estudiantes>();
 
-
-            try
-            {
-
-
-                var anterior = new Repositorio<Inscripciones>().Buscar(entity.InscripcionId);
-                var estudiantes = dbE.Buscar(entity.EstudianteId);
-
-                estudiantes.Balance -= anterior.Monto;
-
-                foreach (var item in anterior.Asignaturas)
-                {
-                    if (!entity.Asignaturas.Any(A => A.Id == item.Id))
-                    {
-                        db.Entry(item).State = EntityState.Deleted;
-
-                    }
-
-                }
-
-                foreach (var item in entity.Asignaturas)
-                {
-                    if (item.Id == 0)
-                    {
-                        db.Entry(item).State = EntityState.Added;
-                    }
-
-                    else
-                        db.Entry(item).State = EntityState.Modified;
-                }
-
-
-                entity.CalcularMonto();
-                estudiantes.Balance += entity.Monto;
-                dbE.Modificar(estudiantes);
-
-                db.Entry(entity).State = EntityState.Modified;
-
-                paso = db.SaveChanges() > 0;
-
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-
-            return paso;
-        }
-        public static Estudiantes Buscar(int id)
-        {
-            Estudiantes estudiantes = new Estudiantes();
-            Contexto db = new Contexto();
-
-
-            try
-            {
-                estudiantes = db.Estudiantes.Find(id);
-
-
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                db.Dispose();
-            }
-            return estudiantes;
-
-        }
         public static bool Eliminar(int id)
         {
             bool paso = false;
-            Contexto db = new Contexto();
-            Repositorio<Estudiantes> dbEst = new Repositorio<Estudiantes>(new DAL.Contexto());
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+            Repositorio<ConsultasM> vent = new Repositorio<ConsultasM>();
+            Repositorio<Materiales> prod = new Repositorio<Materiales>();
+           
+
             try
             {
-                var Inscripcion = db.Inscripciones.Find(id);
-                var estudiante = dbEst.Buscar(Inscripcion.EstudianteId);
-                estudiante.Balance = estudiante.Balance - Inscripcion.Monto;
-                dbEst.Modificar(estudiante);
-                db.Entry(Inscripcion).State = EntityState.Deleted;
+                var consulta = db.ConsultasM.Find(id);
+               
+               
+
+                foreach (var item in consulta.Materiales)
+                {
+                    var materiales = prod.Buscar(item.Id);
+                    materiales.Existencia = materiales.Existencia + item.Cantidad;
+                    prod.Modificar(materiales);
+
+                }
+
+
+                db.Entry(consulta).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -142,24 +84,60 @@ namespace BLL
             }
             return paso;
         }
-        public static List<Inscripciones> GetList(Expression<Func<Inscripciones, bool>> inscripcion)
-        {
-            List<Inscripciones> Lista = new List<Inscripciones>();
-            Contexto db = new Contexto();
 
+        
+
+        public static bool Modificar(ConsultasM consultas)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+            Repositorio<ConsultasM> cons = new Repositorio<ConsultasM>();
+            Repositorio<Materiales> prod = new Repositorio<Materiales>();
             try
             {
-                Lista = db.Inscripciones.Where(inscripcion).ToList();
+                var consulta = cons.Buscar(consultas.ConsultaId);
+
+                
+
+                if (consultas != null)
+                {
+                    foreach (var item in consulta.Materiales)
+                    {
+                        db.Materiales.Find(item.Id).Existencia += item.Cantidad;
+
+                        if (!consultas.Materiales.ToList().Exists(v => v.Id == item.Id))
+                        {
+
+                            db.Entry(item).State = EntityState.Deleted;
+                        }
+                    }
+
+                    foreach (var item in consultas.Materiales)
+                    {
+                        db.Materiales.Find(item.Id).Existencia -= item.Cantidad;
+                        var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
+                        db.Entry(item).State = estado;
+                    }
+
+                    db.Entry(consultas).State = EntityState.Modified;
+                }
+
+
+                if (db.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                db.Dispose();
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.Dispose();
-            }
-            return Lista;
-        }*/
+            return paso;
+        }
+
+        
+
+
     }
 }
