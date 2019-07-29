@@ -23,19 +23,19 @@ namespace SistemaOdontologico.Registros
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
         }
-        //private Alergias LlenarClase()
+        //private Vacunas LlenarClase()
         //{
-        //    Alergias alergias = new Alergias();
-        //   / alergias = (int)IdNumericUpDown.Value;
-        //    //vacunas.Descripcion = DescripcionTextBox.Text;
-        //    //return vacunas;
+        //    Alergias vacunas = new Alergias();
+        //    vacunas. = (int)IdNumericUpDown.Value;
+        //    alergias.Descripcion = DescripcionTextBox.Text;
+        //    return vacunas;
         //}
         private bool ExisteEnLaBaseDeDatos()
         {
-            Repositorio<Vacunas> db = new Repositorio<Vacunas>();
-            Vacunas vacunas = db.Buscar((int)IdNumericUpDown.Value);
+            Repositorio<Alergias> db = new Repositorio<Alergias>();
+            Alergias alergias = db.Buscar((int)IdNumericUpDown.Value);
 
-            return (vacunas != null);
+            return (alergias != null);
 
         }
         private bool Validar()
@@ -50,12 +50,17 @@ namespace SistemaOdontologico.Registros
             }
             return paso;
         }
-        private void LLenarCampo(Vacunas vacunas)
-        {
-            IdNumericUpDown.Value = vacunas.VacunasId;
-            DescripcionTextBox.Text = vacunas.Descripcion;
-        }
+        //private void LLenarCampo(Alergias alergias)
+        //{
+        //    IdNumericUpDown.Value = alergias.VacunasId;
+        //    DescripcionTextBox.Text = alergias.Descripcion;
+        //}
         private void NuevoButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
         {
 
         }

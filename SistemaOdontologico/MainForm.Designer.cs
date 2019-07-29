@@ -45,10 +45,15 @@
             this.consultaDeConsultasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeConsultasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,11 +195,23 @@
             this.consultaDeMaterialesToolStripMenuItem.Text = "Consulta de Materiales";
             this.consultaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeMaterialesToolStripMenuItem_Click);
             // 
+            // consultaDeToolStripMenuItem1
+            // 
+            this.consultaDeToolStripMenuItem1.Name = "consultaDeToolStripMenuItem1";
+            this.consultaDeToolStripMenuItem1.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeToolStripMenuItem1.Text = "Consulta de Vacunas";
+            this.consultaDeToolStripMenuItem1.Click += new System.EventHandler(this.ConsultaDeToolStripMenuItem1_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportesDeUsuariosToolStripMenuItem,
-            this.reporteDePacientesToolStripMenuItem});
+            this.reporteDePacientesToolStripMenuItem,
+            this.reporteDeOdontologosToolStripMenuItem,
+            this.reporteDeConsultasMedicasToolStripMenuItem,
+            this.reporteDeEspecialidadesToolStripMenuItem,
+            this.reporteDeMaterialesToolStripMenuItem,
+            this.reporteDeToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -202,21 +219,49 @@
             // reportesDeUsuariosToolStripMenuItem
             // 
             this.reportesDeUsuariosToolStripMenuItem.Name = "reportesDeUsuariosToolStripMenuItem";
-            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
             // 
             // reporteDePacientesToolStripMenuItem
             // 
             this.reporteDePacientesToolStripMenuItem.Name = "reporteDePacientesToolStripMenuItem";
-            this.reporteDePacientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.reporteDePacientesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.reporteDePacientesToolStripMenuItem.Text = "Reporte de Pacientes";
+            this.reporteDePacientesToolStripMenuItem.Click += new System.EventHandler(this.ReporteDePacientesToolStripMenuItem_Click);
             // 
-            // consultaDeToolStripMenuItem1
+            // reporteDeOdontologosToolStripMenuItem
             // 
-            this.consultaDeToolStripMenuItem1.Name = "consultaDeToolStripMenuItem1";
-            this.consultaDeToolStripMenuItem1.Size = new System.Drawing.Size(273, 22);
-            this.consultaDeToolStripMenuItem1.Text = "Consulta de Vacunas";
+            this.reporteDeOdontologosToolStripMenuItem.Name = "reporteDeOdontologosToolStripMenuItem";
+            this.reporteDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteDeOdontologosToolStripMenuItem.Text = "Reporte de Odontologos";
+            this.reporteDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeOdontologosToolStripMenuItem_Click);
+            // 
+            // reporteDeConsultasMedicasToolStripMenuItem
+            // 
+            this.reporteDeConsultasMedicasToolStripMenuItem.Name = "reporteDeConsultasMedicasToolStripMenuItem";
+            this.reporteDeConsultasMedicasToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteDeConsultasMedicasToolStripMenuItem.Text = "Reporte de Consultas Medicas";
+            // 
+            // reporteDeEspecialidadesToolStripMenuItem
+            // 
+            this.reporteDeEspecialidadesToolStripMenuItem.Name = "reporteDeEspecialidadesToolStripMenuItem";
+            this.reporteDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteDeEspecialidadesToolStripMenuItem.Text = "Reporte de Especialidades";
+            this.reporteDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeEspecialidadesToolStripMenuItem_Click);
+            // 
+            // reporteDeMaterialesToolStripMenuItem
+            // 
+            this.reporteDeMaterialesToolStripMenuItem.Name = "reporteDeMaterialesToolStripMenuItem";
+            this.reporteDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteDeMaterialesToolStripMenuItem.Text = "Reporte de Materiales";
+            this.reporteDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeMaterialesToolStripMenuItem_Click);
+            // 
+            // reporteDeToolStripMenuItem
+            // 
+            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.reporteDeToolStripMenuItem.Text = "Reporte de Vacunas";
             // 
             // MainForm
             // 
@@ -260,6 +305,11 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeVacunasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeAlergiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeOdontologosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeConsultasMedicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeMaterialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeToolStripMenuItem;
     }
 }
 

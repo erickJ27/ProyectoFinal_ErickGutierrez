@@ -124,5 +124,41 @@ namespace SistemaOdontologico
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
+
+        private void ConsultaDeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cVacunas ver = new cVacunas();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ReporteDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rptOdontologos ver = new rptOdontologos();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+
+        }
+
+        private void ReporteDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rptPacientes ver = new rptPacientes();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ReporteDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rptEspecialidades ver = new rptEspecialidades();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ReporteDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rptMateriales ver =new rptMateriales();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
     }
 }

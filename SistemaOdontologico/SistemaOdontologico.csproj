@@ -47,6 +47,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -170,11 +171,71 @@
     <Compile Include="Registros\rVacunas.Designer.cs">
       <DependentUpon>rVacunas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ListaConsultaMedica.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaConsultaMedica.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoEspecialidades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoEspecialidades.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoMateriales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoMateriales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoOdontologos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoOdontologos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoPacientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoPacientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoVacunas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoVacunas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\ListaUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListaUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptEspecialidades.Designer.cs">
+      <DependentUpon>rptEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptMateriales.Designer.cs">
+      <DependentUpon>rptMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptOdontologos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptOdontologos.Designer.cs">
+      <DependentUpon>rptOdontologos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptPacientes.Designer.cs">
+      <DependentUpon>rptPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rptUsuarios.cs">
       <SubType>Form</SubType>
@@ -243,9 +304,45 @@
     <EmbeddedResource Include="Registros\rVacunas.resx">
       <DependentUpon>rVacunas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListaConsultaMedica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListaConsultaMedica.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoEspecialidades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoEspecialidades.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoMateriales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoMateriales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoOdontologos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoOdontologos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoPacientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoPacientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoVacunas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoVacunas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListaUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListaUsuarios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptEspecialidades.resx">
+      <DependentUpon>rptEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptMateriales.resx">
+      <DependentUpon>rptMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptOdontologos.resx">
+      <DependentUpon>rptOdontologos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptPacientes.resx">
+      <DependentUpon>rptPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUsuarios.resx">
       <DependentUpon>rptUsuarios.cs</DependentUpon>
