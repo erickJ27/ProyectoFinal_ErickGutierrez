@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alergias.cs" />
     <Compile Include="ConsultasM.cs" />
     <Compile Include="Especialidades.cs" />
     <Compile Include="Materiales.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="PacienteVacunas.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vacunas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

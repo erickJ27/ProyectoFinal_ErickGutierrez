@@ -19,8 +19,19 @@ namespace SistemaOdontologico.Consultas
             InitializeComponent();
         }
 
-        private void ConsultarButton_Click(object sender, EventArgs e)
+        
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
         {
+            if(UsuariosDataGridView.DataSource == null)
+            {
+                MessageBox.Show("ERROR FATAL!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ConsultarButton_Click_1(object sender, EventArgs e)
+        {
+
             var lista = new List<Usuarios>();
             Repositorio<Usuarios> dbe = new Repositorio<Usuarios>();
             if (FiltrarFechaCheckBox.Checked == true)
@@ -124,12 +135,24 @@ namespace SistemaOdontologico.Consultas
             }
         }
 
-        private void ImprimirButton_Click(object sender, EventArgs e)
+        private void FiltrarFechaCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(UsuariosDataGridView.DataSource == null)
-            {
-                MessageBox.Show("ERROR FATAL!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsuariosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

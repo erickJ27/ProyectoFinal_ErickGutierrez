@@ -17,6 +17,8 @@ namespace DAL
         public DbSet<Especialidades> Especialidades { get; set; }
         public DbSet<Materiales> Materiales { get; set; }
         public DbSet<ConsultasM> ConsultasM { get; set; }
+        public DbSet<Vacunas> Vacunas { get; set; }
+        public DbSet<Alergias> Alergias { get; set; }
         public CentroOdontologicoContexto() : base("ConStr")
         {
 

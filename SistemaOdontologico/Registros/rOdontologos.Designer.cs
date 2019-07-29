@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
-            this.CelularTextBox = new System.Windows.Forms.TextBox();
-            this.TelefonoTextBox = new System.Windows.Forms.TextBox();
-            this.CedulaTextBox = new System.Windows.Forms.TextBox();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,6 +50,9 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -70,27 +70,6 @@
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(250, 20);
             this.DireccionTextBox.TabIndex = 62;
-            // 
-            // CelularTextBox
-            // 
-            this.CelularTextBox.Location = new System.Drawing.Point(252, 93);
-            this.CelularTextBox.Name = "CelularTextBox";
-            this.CelularTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CelularTextBox.TabIndex = 60;
-            // 
-            // TelefonoTextBox
-            // 
-            this.TelefonoTextBox.Location = new System.Drawing.Point(101, 93);
-            this.TelefonoTextBox.Name = "TelefonoTextBox";
-            this.TelefonoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TelefonoTextBox.TabIndex = 59;
-            // 
-            // CedulaTextBox
-            // 
-            this.CedulaTextBox.Location = new System.Drawing.Point(101, 67);
-            this.CedulaTextBox.Name = "CedulaTextBox";
-            this.CedulaTextBox.Size = new System.Drawing.Size(201, 20);
-            this.CedulaTextBox.TabIndex = 58;
             // 
             // NombresTextBox
             // 
@@ -270,11 +249,38 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // CedulaMaskedTextBox
+            // 
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(101, 67);
+            this.CedulaMaskedTextBox.Mask = "000-0000000-0";
+            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CedulaMaskedTextBox.TabIndex = 73;
+            // 
+            // TelefonoMaskedTextBox
+            // 
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(101, 93);
+            this.TelefonoMaskedTextBox.Mask = "000-000-0000";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TelefonoMaskedTextBox.TabIndex = 74;
+            // 
+            // CelularMaskedTextBox
+            // 
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(252, 93);
+            this.CelularMaskedTextBox.Mask = "000-000-0000";
+            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
+            this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CelularMaskedTextBox.TabIndex = 75;
+            // 
             // rOdontologos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 276);
+            this.Controls.Add(this.CelularMaskedTextBox);
+            this.Controls.Add(this.TelefonoMaskedTextBox);
+            this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
@@ -286,9 +292,6 @@
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.DireccionTextBox);
-            this.Controls.Add(this.CelularTextBox);
-            this.Controls.Add(this.TelefonoTextBox);
-            this.Controls.Add(this.CedulaTextBox);
             this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label11);
@@ -312,9 +315,6 @@
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox DireccionTextBox;
-        private System.Windows.Forms.TextBox CelularTextBox;
-        private System.Windows.Forms.TextBox TelefonoTextBox;
-        private System.Windows.Forms.TextBox CedulaTextBox;
         private System.Windows.Forms.TextBox NombresTextBox;
         private System.Windows.Forms.NumericUpDown IdNumericUpDown;
         private System.Windows.Forms.Label label11;
@@ -333,5 +333,8 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.MaskedTextBox CelularMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
     }
 }

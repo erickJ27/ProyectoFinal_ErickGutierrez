@@ -25,9 +25,9 @@ namespace SistemaOdontologico.Registros
         {
             IdNumericUpDown.Value = 0;
             NombresTextBox.Text = string.Empty;
-            CedulaTextBox.Text = string.Empty;
-            TelefonoTextBox.Text = string.Empty;
-            CelularTextBox.Text = string.Empty;
+            CedulaMaskedTextBox.Text = string.Empty;
+            TelefonoMaskedTextBox.Text = string.Empty;
+            CelularMaskedTextBox.Text = string.Empty;
             EspecialidadComboBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
             EmailTextBox.Text = string.Empty;
@@ -39,9 +39,9 @@ namespace SistemaOdontologico.Registros
 
             odontologos.OdontologoId = (int)IdNumericUpDown.Value;
             odontologos.Nombres = NombresTextBox.Text;
-            odontologos.Cedula = CedulaTextBox.Text;
-            odontologos.Telefono = TelefonoTextBox.Text;
-            odontologos.Celular = CelularTextBox.Text;
+            odontologos.Cedula = CedulaMaskedTextBox.Text;
+            odontologos.Telefono = TelefonoMaskedTextBox.Text;
+            odontologos.Celular = CelularMaskedTextBox.Text;
             odontologos.Especialidad = EspecialidadComboBox.Text;
             odontologos.Direccion = DireccionTextBox.Text;
             odontologos.Email = EmailTextBox.Text;
@@ -69,22 +69,22 @@ namespace SistemaOdontologico.Registros
                 NombresTextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(CedulaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(CedulaMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(CedulaTextBox, "El campo Cedula no puede estar vacio");
-                CedulaTextBox.Focus();
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "El campo Cedula no puede estar vacio");
+                CedulaMaskedTextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(TelefonoTextBox.Text))
+            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(TelefonoTextBox, "El campo Telefono no puede estar vacio");
-                TelefonoTextBox.Focus();
+                MyErrorProvider.SetError(TelefonoMaskedTextBox, "El campo Telefono no puede estar vacio");
+                TelefonoMaskedTextBox.Focus();
                 paso = false;
             }
-            if (string.IsNullOrWhiteSpace(CelularTextBox.Text))
+            if (string.IsNullOrWhiteSpace(CelularMaskedTextBox.Text))
             {
-                MyErrorProvider.SetError(CelularTextBox, "El campo Celular no puede estar vacio");
-                CelularTextBox.Focus();
+                MyErrorProvider.SetError(CelularMaskedTextBox, "El campo Celular no puede estar vacio");
+                CelularMaskedTextBox.Focus();
                 paso = false;
             }
             if (string.IsNullOrWhiteSpace(DireccionTextBox.Text))
@@ -106,9 +106,9 @@ namespace SistemaOdontologico.Registros
         {
             IdNumericUpDown.Value = odontologos.OdontologoId;
             NombresTextBox.Text = odontologos.Nombres;
-            CedulaTextBox.Text = odontologos.Cedula;
-            TelefonoTextBox.Text = odontologos.Telefono;
-            CelularTextBox.Text = odontologos.Celular;
+            CedulaMaskedTextBox.Text = odontologos.Cedula;
+            TelefonoMaskedTextBox.Text = odontologos.Telefono;
+            CelularMaskedTextBox.Text = odontologos.Celular;
             EspecialidadComboBox.Text = odontologos.Especialidad;
             DireccionTextBox.Text = odontologos.Direccion;
             EmailTextBox.Text = odontologos.Email;
@@ -190,6 +190,7 @@ namespace SistemaOdontologico.Registros
         private void NuevaEspecialidadButton_Click(object sender, EventArgs e)
         {
             rEspecialidades espe = new rEspecialidades();
+            espe.StartPosition = FormStartPosition.CenterScreen;
             espe.ShowDialog();
             ListadoEspecialidades();
         }

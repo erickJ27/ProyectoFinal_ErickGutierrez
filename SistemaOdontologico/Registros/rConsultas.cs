@@ -383,6 +383,7 @@ namespace SistemaOdontologico.Registros
         private void AgregarMaterialesButton_Click(object sender, EventArgs e)
         {
             rMateriales m = new rMateriales();
+            m.StartPosition = FormStartPosition.CenterScreen;
             m.ShowDialog();
             ListadoMateriales();
         }

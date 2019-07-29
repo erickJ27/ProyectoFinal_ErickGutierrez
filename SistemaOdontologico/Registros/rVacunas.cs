@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 using Entidades;
-using DAL;
+using BLL;
 
 namespace SistemaOdontologico.Registros
 {
-    public partial class rEspecialidades : Form
+    public partial class rVacunas : Form
     {
-        public rEspecialidades()
+        public rVacunas()
         {
             InitializeComponent();
         }
@@ -24,19 +23,19 @@ namespace SistemaOdontologico.Registros
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
         }
-        private Especialidades LlenarClase()
+        private Vacunas LlenarClase()
         {
-            Especialidades especialidades = new Especialidades();
-            especialidades.EspecialidadId = (int)IdNumericUpDown.Value;
-            especialidades.Descripcion = DescripcionTextBox.Text;
-            return especialidades;
+            Vacunas vacunas = new Vacunas();
+            vacunas.VacunasId = (int)IdNumericUpDown.Value;
+            vacunas.Descripcion = DescripcionTextBox.Text;
+            return vacunas;
         }
         private bool ExisteEnLaBaseDeDatos()
         {
-            Repositorio<Especialidades> db = new Repositorio<Especialidades>();
-            Especialidades especialidades = db.Buscar((int)IdNumericUpDown.Value);
+            Repositorio<Vacunas> db = new Repositorio<Vacunas>();
+            Vacunas vacunas = db.Buscar((int)IdNumericUpDown.Value);
 
-            return (especialidades != null);
+            return (vacunas != null);
 
         }
         private bool Validar()
@@ -51,11 +50,12 @@ namespace SistemaOdontologico.Registros
             }
             return paso;
         }
-        private void LLenarCampo(Especialidades especialidades)
+        private void LLenarCampo(Vacunas vacunas)
         {
-            IdNumericUpDown.Value = especialidades.EspecialidadId;
-            DescripcionTextBox.Text = especialidades.Descripcion;
+            IdNumericUpDown.Value = vacunas.VacunasId;
+            DescripcionTextBox.Text = vacunas.Descripcion;
         }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -64,24 +64,24 @@ namespace SistemaOdontologico.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Repositorio<Especialidades> db = new Repositorio<Especialidades>();
-            Especialidades especialidades = new Especialidades();
+            Repositorio<Vacunas> db = new Repositorio<Vacunas>();
+            Vacunas v = new Vacunas();
             if (!Validar())
                 return;
 
-            especialidades = LlenarClase();
+            v = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
-                paso = db.Guardar(especialidades);
+                paso = db.Guardar(v);
             }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar una especialidad que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar una Vacuna que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = db.Modificar(especialidades);
+                paso = db.Modificar(v);
             }
             if (!ExisteEnLaBaseDeDatos())
             {
@@ -100,10 +100,10 @@ namespace SistemaOdontologico.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            Repositorio<Especialidades> db = new Repositorio<Especialidades>();
+            Repositorio<Vacunas> db = new Repositorio<Vacunas>();
             if (!ExisteEnLaBaseDeDatos())
             {
-                MessageBox.Show("No se puede Eliminar una especialidad que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede Eliminar una vacuna que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             MyErrorProvider.Clear();
@@ -115,27 +115,24 @@ namespace SistemaOdontologico.Registros
             if (db.Eliminar(id))
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar una especialidad que no existe");
+                MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar una vacuna que no existe");
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-
             int id;
-            Especialidades especialidades = new Especialidades();
-            Repositorio<Especialidades> db = new Repositorio<Especialidades>();
+            Vacunas vacunas = new Vacunas();
+            Repositorio<Vacunas> db = new Repositorio<Vacunas>();
             int.TryParse(IdNumericUpDown.Text, out id);
             Limpiar();
-            especialidades = db.Buscar(id);
+            vacunas = db.Buscar(id);
 
-            if (especialidades != null)
+            if (vacunas != null)
             {
-                LLenarCampo(especialidades);
+                LLenarCampo(vacunas);
             }
             else
-                MessageBox.Show("Especialidad no encontrado");
+                MessageBox.Show("Vacuna no encontrado");
         }
-
-        
     }
 }

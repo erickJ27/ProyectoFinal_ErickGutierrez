@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.FiltrarFechaCheckBox = new System.Windows.Forms.CheckBox();
-            this.UsuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.PacientesDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +42,7 @@
             this.ConsultarButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PacientesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,13 +57,13 @@
             this.FiltrarFechaCheckBox.Text = "Filtrar Fecha";
             this.FiltrarFechaCheckBox.UseVisualStyleBackColor = true;
             // 
-            // UsuariosDataGridView
+            // PacientesDataGridView
             // 
-            this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsuariosDataGridView.Location = new System.Drawing.Point(14, 89);
-            this.UsuariosDataGridView.Name = "UsuariosDataGridView";
-            this.UsuariosDataGridView.Size = new System.Drawing.Size(617, 321);
-            this.UsuariosDataGridView.TabIndex = 32;
+            this.PacientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PacientesDataGridView.Location = new System.Drawing.Point(14, 89);
+            this.PacientesDataGridView.Name = "PacientesDataGridView";
+            this.PacientesDataGridView.Size = new System.Drawing.Size(617, 321);
+            this.PacientesDataGridView.TabIndex = 32;
             // 
             // CriterioTextBox
             // 
@@ -79,8 +79,14 @@
             "Todo",
             "Id",
             "Nombres",
-            "Email",
-            "Usario"});
+            "Sexo",
+            "Grupo Sanguineo",
+            "Cedula",
+            "Telefono",
+            "Celular",
+            "Seguro Medico",
+            "Direccion",
+            "Email"});
             this.FiltroComboBox.Location = new System.Drawing.Point(7, 27);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
@@ -199,10 +205,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.ConsultarButton);
-            this.Controls.Add(this.UsuariosDataGridView);
+            this.Controls.Add(this.PacientesDataGridView);
             this.Name = "cPacientes";
             this.Text = "Consulta de Pacientes";
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PacientesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -217,7 +223,7 @@
         private System.Windows.Forms.Button ImprimirButton;
         private System.Windows.Forms.Button ConsultarButton;
         private System.Windows.Forms.CheckBox FiltrarFechaCheckBox;
-        private System.Windows.Forms.DataGridView UsuariosDataGridView;
+        private System.Windows.Forms.DataGridView PacientesDataGridView;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.DateTimePicker HastaDateTimePicker;

@@ -33,11 +33,22 @@
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeVacunasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeAlergiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeOdontologosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeConsultasMedicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDePacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +60,7 @@
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,7 +70,11 @@
             this.registroDeUsuariosToolStripMenuItem,
             this.registroDePacientesToolStripMenuItem,
             this.registroDeOdontologosToolStripMenuItem,
-            this.registroDeConsultasToolStripMenuItem});
+            this.registroDeConsultasToolStripMenuItem,
+            this.registroDeEspecialidadesToolStripMenuItem,
+            this.registroDeMaterialesToolStripMenuItem,
+            this.registroDeVacunasToolStripMenuItem,
+            this.registroDeAlergiasToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -67,28 +82,68 @@
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeUsuariosToolStripMenuItem_Click);
             // 
             // registroDePacientesToolStripMenuItem
             // 
             this.registroDePacientesToolStripMenuItem.Name = "registroDePacientesToolStripMenuItem";
-            this.registroDePacientesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDePacientesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registroDePacientesToolStripMenuItem.Text = "Registro de Pacientes";
             this.registroDePacientesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDePacientesToolStripMenuItem_Click);
             // 
             // registroDeOdontologosToolStripMenuItem
             // 
             this.registroDeOdontologosToolStripMenuItem.Name = "registroDeOdontologosToolStripMenuItem";
-            this.registroDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.registroDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.registroDeOdontologosToolStripMenuItem.Text = "Registro de Odontologos";
             this.registroDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeOdontologosToolStripMenuItem_Click);
+            // 
+            // registroDeConsultasToolStripMenuItem
+            // 
+            this.registroDeConsultasToolStripMenuItem.Name = "registroDeConsultasToolStripMenuItem";
+            this.registroDeConsultasToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registroDeConsultasToolStripMenuItem.Text = "Registro de Consultas";
+            this.registroDeConsultasToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeConsultasToolStripMenuItem_Click);
+            // 
+            // registroDeEspecialidadesToolStripMenuItem
+            // 
+            this.registroDeEspecialidadesToolStripMenuItem.Name = "registroDeEspecialidadesToolStripMenuItem";
+            this.registroDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registroDeEspecialidadesToolStripMenuItem.Text = "Registro de Especialidades";
+            this.registroDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeEspecialidadesToolStripMenuItem_Click);
+            // 
+            // registroDeMaterialesToolStripMenuItem
+            // 
+            this.registroDeMaterialesToolStripMenuItem.Name = "registroDeMaterialesToolStripMenuItem";
+            this.registroDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registroDeMaterialesToolStripMenuItem.Text = "Registro de Materiales";
+            this.registroDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeMaterialesToolStripMenuItem_Click);
+            // 
+            // registroDeVacunasToolStripMenuItem
+            // 
+            this.registroDeVacunasToolStripMenuItem.Name = "registroDeVacunasToolStripMenuItem";
+            this.registroDeVacunasToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registroDeVacunasToolStripMenuItem.Text = "Registro de Vacunas";
+            this.registroDeVacunasToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeVacunasToolStripMenuItem_Click);
+            // 
+            // registroDeAlergiasToolStripMenuItem
+            // 
+            this.registroDeAlergiasToolStripMenuItem.Name = "registroDeAlergiasToolStripMenuItem";
+            this.registroDeAlergiasToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.registroDeAlergiasToolStripMenuItem.Text = "Registro de Alergias";
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaDeToolStripMenuItem});
+            this.consultaDeToolStripMenuItem,
+            this.consultaDePacientesToolStripMenuItem,
+            this.consultaDeOdontologosToolStripMenuItem,
+            this.consultaDeConsultasMedicasToolStripMenuItem,
+            this.consultaDeEspecialidadesToolStripMenuItem,
+            this.consultaDeMaterialesToolStripMenuItem,
+            this.consultaDeToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -96,14 +151,50 @@
             // consultaDeToolStripMenuItem
             // 
             this.consultaDeToolStripMenuItem.Name = "consultaDeToolStripMenuItem";
-            this.consultaDeToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.consultaDeToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
             this.consultaDeToolStripMenuItem.Text = "Consulta de Usuarios ";
             this.consultaDeToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeToolStripMenuItem_Click);
+            // 
+            // consultaDePacientesToolStripMenuItem
+            // 
+            this.consultaDePacientesToolStripMenuItem.Name = "consultaDePacientesToolStripMenuItem";
+            this.consultaDePacientesToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.consultaDePacientesToolStripMenuItem.Text = "Consulta de Pacientes";
+            this.consultaDePacientesToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDePacientesToolStripMenuItem_Click);
+            // 
+            // consultaDeOdontologosToolStripMenuItem
+            // 
+            this.consultaDeOdontologosToolStripMenuItem.Name = "consultaDeOdontologosToolStripMenuItem";
+            this.consultaDeOdontologosToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeOdontologosToolStripMenuItem.Text = "Consulta de Odontologos";
+            this.consultaDeOdontologosToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeOdontologosToolStripMenuItem_Click);
+            // 
+            // consultaDeConsultasMedicasToolStripMenuItem
+            // 
+            this.consultaDeConsultasMedicasToolStripMenuItem.Name = "consultaDeConsultasMedicasToolStripMenuItem";
+            this.consultaDeConsultasMedicasToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeConsultasMedicasToolStripMenuItem.Text = "Consulta de Consultas Odontologicas";
+            this.consultaDeConsultasMedicasToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeConsultasMedicasToolStripMenuItem_Click);
+            // 
+            // consultaDeEspecialidadesToolStripMenuItem
+            // 
+            this.consultaDeEspecialidadesToolStripMenuItem.Name = "consultaDeEspecialidadesToolStripMenuItem";
+            this.consultaDeEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeEspecialidadesToolStripMenuItem.Text = "Consulta de Especialidades";
+            this.consultaDeEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeEspecialidadesToolStripMenuItem_Click);
+            // 
+            // consultaDeMaterialesToolStripMenuItem
+            // 
+            this.consultaDeMaterialesToolStripMenuItem.Name = "consultaDeMaterialesToolStripMenuItem";
+            this.consultaDeMaterialesToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeMaterialesToolStripMenuItem.Text = "Consulta de Materiales";
+            this.consultaDeMaterialesToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeMaterialesToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportesDeUsuariosToolStripMenuItem});
+            this.reportesDeUsuariosToolStripMenuItem,
+            this.reporteDePacientesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -111,16 +202,21 @@
             // reportesDeUsuariosToolStripMenuItem
             // 
             this.reportesDeUsuariosToolStripMenuItem.Name = "reportesDeUsuariosToolStripMenuItem";
-            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuario";
+            this.reportesDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.reportesDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios";
             this.reportesDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesDeUsuariosToolStripMenuItem_Click);
             // 
-            // registroDeConsultasToolStripMenuItem
+            // reporteDePacientesToolStripMenuItem
             // 
-            this.registroDeConsultasToolStripMenuItem.Name = "registroDeConsultasToolStripMenuItem";
-            this.registroDeConsultasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.registroDeConsultasToolStripMenuItem.Text = "Registro de Consultas";
-            this.registroDeConsultasToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeConsultasToolStripMenuItem_Click);
+            this.reporteDePacientesToolStripMenuItem.Name = "reporteDePacientesToolStripMenuItem";
+            this.reporteDePacientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.reporteDePacientesToolStripMenuItem.Text = "Reporte de Pacientes";
+            // 
+            // consultaDeToolStripMenuItem1
+            // 
+            this.consultaDeToolStripMenuItem1.Name = "consultaDeToolStripMenuItem1";
+            this.consultaDeToolStripMenuItem1.Size = new System.Drawing.Size(273, 22);
+            this.consultaDeToolStripMenuItem1.Text = "Consulta de Vacunas";
             // 
             // MainForm
             // 
@@ -128,13 +224,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaOdontologico.Properties.Resources.odontologia_umsa;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -154,6 +249,17 @@
         private System.Windows.Forms.ToolStripMenuItem registroDePacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeOdontologosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeConsultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDePacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeMaterialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeOdontologosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeConsultasMedicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeMaterialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDePacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeVacunasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeAlergiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeToolStripMenuItem1;
     }
 }
 

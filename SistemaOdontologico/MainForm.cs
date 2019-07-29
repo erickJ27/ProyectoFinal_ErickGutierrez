@@ -67,5 +67,62 @@ namespace SistemaOdontologico
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
+
+        private void ConsultaDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cPacientes ver = new cPacientes();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void RegistroDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEspecialidades ver = new rEspecialidades();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void RegistroDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rMateriales ver = new rMateriales();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ConsultaDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cOdontologos ver = new cOdontologos();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ConsultaDeConsultasMedicasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cConsultasMedicas ver = new cConsultasMedicas();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+
+        }
+
+        private void ConsultaDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEspecialidades ver = new cEspecialidades();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void ConsultaDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cMateriales ver = new cMateriales();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void RegistroDeVacunasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVacunas ver = new rVacunas();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
     }
 }
