@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ListaConsultaMedica1 = new SistemaOdontologico.Reportes.ListaConsultaMedica();
+            this.ListaConsultaMedica1 = new SistemaOdontologico.Reportes.ListadoConsultaMedica();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -59,6 +59,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private ListaConsultaMedica ListaConsultaMedica1;
+        private ListadoConsultaMedica ListaConsultaMedica1;
     }
 }

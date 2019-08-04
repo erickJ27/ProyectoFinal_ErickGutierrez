@@ -15,6 +15,7 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cUsuarios : Form
     {
+        private List<Usuarios> Lista;
         public cUsuarios()
         {
             InitializeComponent();
@@ -24,15 +25,24 @@ namespace SistemaOdontologico.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            rptUsuarios ver = new rptUsuarios();
-            ver.Show();
+            if (UsuariosDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptUsuarios r = new rptUsuarios(Lista);
+                r.ShowDialog();
+            }
         }
 
         private void ConsultarButton_Click_1(object sender, EventArgs e)
         {
 
             var lista = new List<Usuarios>();
-            Repositorio<Usuarios> dbe = new Repositorio<Usuarios>();
+            
+        Repositorio<Usuarios> dbe = new Repositorio<Usuarios>();
             if (FiltrarFechaCheckBox.Checked == true)
             {
                 try
@@ -131,27 +141,17 @@ namespace SistemaOdontologico.Consultas
                 {
                     MessageBox.Show("Introdujo un dato incorrecto");
                 }
+                Lista = lista;
+                UsuariosDataGridView.DataSource = lista;
             }
         }
 
-        private void FiltrarFechaCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
+        
 
-        }
+        
 
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void UsuariosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void GroupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

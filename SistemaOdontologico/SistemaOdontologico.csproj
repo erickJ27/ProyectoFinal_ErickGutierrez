@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cAlergias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cAlergias.Designer.cs">
+      <DependentUpon>cAlergias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cConsultasMedicas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,10 +174,10 @@
     <Compile Include="Registros\rVacunas.Designer.cs">
       <DependentUpon>rVacunas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ListaConsultaMedica.cs">
+    <Compile Include="Reportes\ListadoConsultaMedica.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ListaConsultaMedica.rpt</DependentUpon>
+      <DependentUpon>ListadoConsultaMedica.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ListadoEspecialidades.cs">
@@ -198,10 +204,10 @@
       <DependentUpon>ListadoPacientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ListaUsuarios.cs">
+    <Compile Include="Reportes\ListadoUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ListaUsuarios.rpt</DependentUpon>
+      <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptConsultaMedica.cs">
@@ -240,6 +246,9 @@
     <Compile Include="Reportes\rptUsuarios.Designer.cs">
       <DependentUpon>rptUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\cAlergias.resx">
+      <DependentUpon>cAlergias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cConsultasMedicas.resx">
       <DependentUpon>cConsultasMedicas.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,9 +310,9 @@
     <EmbeddedResource Include="Registros\rVacunas.resx">
       <DependentUpon>rVacunas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListaConsultaMedica.rpt">
+    <EmbeddedResource Include="Reportes\ListadoConsultaMedica.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ListaConsultaMedica.cs</LastGenOutput>
+      <LastGenOutput>ListadoConsultaMedica.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListadoEspecialidades.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -321,9 +330,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoPacientes.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListaUsuarios.rpt">
+    <EmbeddedResource Include="Reportes\ListadoUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ListaUsuarios.cs</LastGenOutput>
+      <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptConsultaMedica.resx">
       <DependentUpon>rptConsultaMedica.cs</DependentUpon>

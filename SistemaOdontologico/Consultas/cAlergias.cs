@@ -7,16 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
-namespace SistemaOdontologico.Reportes
+namespace SistemaOdontologico.Consultas
 {
-    public partial class rptUsuarios : Form
+    public partial class cAlergias : Form
     {
-        private List<Usuarios> ListaUsuario;
-        public rptUsuarios(List<Usuarios> usuarios)
+        public cAlergias()
         {
-            this.ListaUsuario = usuarios;
             InitializeComponent();
         }
     }

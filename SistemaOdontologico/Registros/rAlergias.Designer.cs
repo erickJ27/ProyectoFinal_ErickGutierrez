@@ -145,7 +145,9 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "rAlergias";
             this.Text = "Registro de Alergias";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();

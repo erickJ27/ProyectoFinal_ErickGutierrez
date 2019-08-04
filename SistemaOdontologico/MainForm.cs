@@ -31,13 +31,7 @@ namespace SistemaOdontologico
             ver.Show();
         }
 
-        private void ReportesDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rptUsuarios ver = new rptUsuarios();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterScreen;
-            ver.Show();
-        }
+        
 
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -144,38 +138,13 @@ namespace SistemaOdontologico
             ver.Show();
         }
 
-        private void ReporteDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rptOdontologos ver = new rptOdontologos();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterScreen;
-            ver.Show();
+        
 
-        }
+       
 
-        private void ReporteDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rptPacientes ver = new rptPacientes();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterScreen;
-            ver.Show();
-        }
+        
 
-        private void ReporteDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rptEspecialidades ver = new rptEspecialidades();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterScreen;
-            ver.Show();
-        }
-
-        private void ReporteDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rptMateriales ver =new rptMateriales();
-            ver.MdiParent = this;
-            ver.StartPosition = FormStartPosition.CenterScreen;
-            ver.Show();
-        }
+        
 
         private void RegistroDeAlergiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -184,5 +153,25 @@ namespace SistemaOdontologico
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
+
+        private void DesconectarseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Esta seguro que quiere Desconectarse?", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Esta seguro que quiere salir del sistema?", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+                Application.Exit();
+        }
+
+       
     }
 }

@@ -16,14 +16,14 @@ namespace SistemaOdontologico.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ListaConsultaMedica : ReportClass {
+    public class ListadoConsultaMedica : ReportClass {
         
-        public ListaConsultaMedica() {
+        public ListadoConsultaMedica() {
         }
         
         public override string ResourceName {
             get {
-                return "ListaConsultaMedica.rpt";
+                return "ListadoConsultaMedica.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SistemaOdontologico.Reportes {
         
         public override string FullResourceName {
             get {
-                return "SistemaOdontologico.Reportes.ListaConsultaMedica.rpt";
+                return "SistemaOdontologico.Reportes.ListadoConsultaMedica.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SistemaOdontologico.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedListaConsultaMedica : Component, ICachedReport {
+    public class CachedListadoConsultaMedica : Component, ICachedReport {
         
-        public CachedListaConsultaMedica() {
+        public CachedListadoConsultaMedica() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SistemaOdontologico.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ListaConsultaMedica rpt = new ListaConsultaMedica();
+            ListadoConsultaMedica rpt = new ListadoConsultaMedica();
             rpt.Site = this.Site;
             return rpt;
         }

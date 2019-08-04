@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptUsuarios));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ListaUsuarios1 = new SistemaOdontologico.Reportes.ListaUsuarios();
+            this.ListaUsuarios1 = new SistemaOdontologico.Reportes.ListadoUsuarios();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -61,6 +61,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private ListaUsuarios ListaUsuarios1;
+        private ListadoUsuarios ListaUsuarios1;
     }
 }

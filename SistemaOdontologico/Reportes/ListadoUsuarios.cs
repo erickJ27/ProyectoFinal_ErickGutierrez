@@ -16,14 +16,14 @@ namespace SistemaOdontologico.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ListaUsuarios : ReportClass {
+    public class ListadoUsuarios : ReportClass {
         
-        public ListaUsuarios() {
+        public ListadoUsuarios() {
         }
         
         public override string ResourceName {
             get {
-                return "ListaUsuarios.rpt";
+                return "ListadoUsuarios.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SistemaOdontologico.Reportes {
         
         public override string FullResourceName {
             get {
-                return "SistemaOdontologico.Reportes.ListaUsuarios.rpt";
+                return "SistemaOdontologico.Reportes.ListadoUsuarios.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SistemaOdontologico.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedListaUsuarios : Component, ICachedReport {
+    public class CachedListadoUsuarios : Component, ICachedReport {
         
-        public CachedListaUsuarios() {
+        public CachedListadoUsuarios() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SistemaOdontologico.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ListaUsuarios rpt = new ListaUsuarios();
+            ListadoUsuarios rpt = new ListadoUsuarios();
             rpt.Site = this.Site;
             return rpt;
         }
