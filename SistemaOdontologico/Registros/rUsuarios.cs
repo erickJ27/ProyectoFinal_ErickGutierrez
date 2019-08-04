@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using DAL;
 
 namespace SistemaOdontologico.Registros
 {
@@ -26,6 +27,7 @@ namespace SistemaOdontologico.Registros
             NivelUsuarioComboBox.Text = string.Empty;
             UsuarioTextBox.Text = string.Empty;
             ClaveTextBox.Text = string.Empty;
+            RepetirClaveTextBox.Text = string.Empty;
             FechaIngresoDateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
@@ -43,7 +45,7 @@ namespace SistemaOdontologico.Registros
                 usuario.NivelUsuario = 2;
 
             usuario.Usuario = UsuarioTextBox.Text;
-            usuario.Clave = ClaveTextBox.Text;
+            usuario.Clave = Eramake.eCryptography.Encrypt(ClaveTextBox.Text);
             usuario.FechaIngreso = FechaIngresoDateTimePicker.Value;
 
             return usuario;
@@ -56,27 +58,80 @@ namespace SistemaOdontologico.Registros
             return (usuarios != null);
 
         }
+        public static bool RepetirUser(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        public static bool RepetirEmail(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Usuarios.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirUser(UsuarioTextBox.Text))
+            {
+                MyErrorProvider.SetError(UsuarioTextBox, "No se debe repetir los usuarios.");
+                paso = false;
+            }
+            if (RepetirEmail(EmailTextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailTextBox, "No se debe usar el mismo email que otro.");
+                paso = false;
+            }
+            return paso;
+        }
 
         private bool Validar()
         {
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (NombresTextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(NombresTextBox.Text))
             {
                 MyErrorProvider.SetError(NombresTextBox, "El campo Nombre no puede estar vacio");
                 NombresTextBox.Focus();
 
                 paso = false;
             }
-            if (EmailTextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(EmailTextBox.Text))
             {
                 MyErrorProvider.SetError(EmailTextBox, "El campo Email no puede estar vacio");
                 EmailTextBox.Focus();
 
                 paso = false;
             }
-            if (NivelUsuarioComboBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(NivelUsuarioComboBox.Text))
             {
                 MyErrorProvider.SetError(NivelUsuarioComboBox, "El campo Email no puede estar vacio");
                 NivelUsuarioComboBox.Focus();
@@ -84,18 +139,30 @@ namespace SistemaOdontologico.Registros
                 paso = false;
             }
 
-            if (UsuarioTextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text))
             {
                 MyErrorProvider.SetError(UsuarioTextBox, "El campo usuario no puede estar vacio");
                 UsuarioTextBox.Focus();
 
                 paso = false;
             }
-            if (ClaveTextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(ClaveTextBox.Text))
             {
                 MyErrorProvider.SetError(ClaveTextBox, "El campo Clave no puede estar vacio");
                 ClaveTextBox.Focus();
 
+                paso = false;
+            }
+            if (RepetirClaveTextBox.Text != ClaveTextBox.Text)
+            {
+                MyErrorProvider.SetError(RepetirClaveTextBox, "La clave no coincide.");
+                RepetirClaveTextBox.Focus();
+                paso = false;
+            }
+            if (FechaIngresoDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaIngresoDateTimePicker, "No se puede registrar esta fecha.");
+                FechaIngresoDateTimePicker.Focus();
                 paso = false;
             }
 
@@ -116,7 +183,7 @@ namespace SistemaOdontologico.Registros
                 NivelUsuarioComboBox.Text = sur;
 
             UsuarioTextBox.Text = usuarios.Usuario;
-            ClaveTextBox.Text = usuarios.Clave;
+            ClaveTextBox.Text = Eramake.eCryptography.Decrypt(usuarios.Clave);
             FechaIngresoDateTimePicker.Value = usuarios.FechaIngreso;
 
         }
@@ -136,6 +203,8 @@ namespace SistemaOdontologico.Registros
             usuarios = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
+                if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(usuarios);
             }
             else
@@ -165,6 +234,7 @@ namespace SistemaOdontologico.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             Repositorio<Usuarios> db = new Repositorio<Usuarios>();
+            MyErrorProvider.Clear();
             if (!ExisteEnLaBaseDeDatos())
             {
                 MessageBox.Show("No se puede Eliminar un usuario que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -186,19 +256,35 @@ namespace SistemaOdontologico.Registros
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            int id;
+            Repositorio<Usuarios> Repositorio = new Repositorio<Usuarios>();
             Usuarios usuarios = new Usuarios();
-            Repositorio<Usuarios> db = new Repositorio<Usuarios>();
+            int id;
             int.TryParse(IdNumericUpDown.Text, out id);
             Limpiar();
-            usuarios = db.Buscar(id);
 
+            usuarios = Repositorio.Buscar(id);
             if (usuarios != null)
-            {
                 LlenarCampo(usuarios);
-            }
             else
-                MessageBox.Show("Usuario no encontrado");
+                MessageBox.Show("No encontrado.");
+        }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

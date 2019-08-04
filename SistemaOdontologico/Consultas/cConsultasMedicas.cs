@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using SistemaOdontologico.Reportes;
 namespace SistemaOdontologico.Consultas
 {
     public partial class cConsultasMedicas : Form
@@ -145,6 +146,10 @@ namespace SistemaOdontologico.Consultas
             }
         }
 
-        
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            rptConsultaMedica ver = new rptConsultaMedica();
+            ver.Show();
+        }
     }
 }

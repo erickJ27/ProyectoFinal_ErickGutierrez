@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rConsultas));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(175, 33);
             this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.ReadOnly = true;
             this.PrecioTextBox.Size = new System.Drawing.Size(71, 20);
             this.PrecioTextBox.TabIndex = 47;
             // 
@@ -238,6 +240,7 @@
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(50, 20);
             this.CantidadNumericUpDown.TabIndex = 11;
+            this.CantidadNumericUpDown.ValueChanged += new System.EventHandler(this.CantidadNumericUpDown_ValueChanged);
             // 
             // label10
             // 
@@ -424,6 +427,7 @@
             // 
             this.SubTotalTextBox.Location = new System.Drawing.Point(21, 392);
             this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.ReadOnly = true;
             this.SubTotalTextBox.Size = new System.Drawing.Size(100, 20);
             this.SubTotalTextBox.TabIndex = 49;
             // 
@@ -431,6 +435,7 @@
             // 
             this.ItibisTextBox.Location = new System.Drawing.Point(145, 392);
             this.ItibisTextBox.Name = "ItibisTextBox";
+            this.ItibisTextBox.ReadOnly = true;
             this.ItibisTextBox.Size = new System.Drawing.Size(100, 20);
             this.ItibisTextBox.TabIndex = 50;
             // 
@@ -438,6 +443,7 @@
             // 
             this.TotalTextBox.Location = new System.Drawing.Point(265, 392);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(100, 20);
             this.TotalTextBox.TabIndex = 51;
             // 
@@ -479,6 +485,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rConsultas";
             this.Text = "Registro de Consultas";
             this.groupBox1.ResumeLayout(false);

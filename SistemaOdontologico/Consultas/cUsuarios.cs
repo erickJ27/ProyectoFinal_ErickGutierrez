@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaOdontologico.Reportes;
 
 namespace SistemaOdontologico.Consultas
 {
@@ -23,10 +24,8 @@ namespace SistemaOdontologico.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            if(UsuariosDataGridView.DataSource == null)
-            {
-                MessageBox.Show("ERROR FATAL!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            rptUsuarios ver = new rptUsuarios();
+            ver.Show();
         }
 
         private void ConsultarButton_Click_1(object sender, EventArgs e)

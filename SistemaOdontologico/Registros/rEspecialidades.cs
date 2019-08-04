@@ -39,6 +39,37 @@ namespace SistemaOdontologico.Registros
             return (especialidades != null);
 
         }
+        public static bool RepetirEspecialidad(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Especialidades.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirEspecialidad(DescripcionTextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "No se puede crear una especialidad mas de 1 veces.");
+                paso = false;
+            }
+            return paso;
+        }
+
         private bool Validar()
         {
             bool paso = true;
@@ -72,6 +103,8 @@ namespace SistemaOdontologico.Registros
             especialidades = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
+                if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(especialidades);
             }
             else

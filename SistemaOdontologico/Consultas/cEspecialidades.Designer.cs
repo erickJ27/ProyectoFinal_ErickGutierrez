@@ -123,6 +123,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // cEspecialidades
             // 
@@ -134,7 +135,7 @@
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.EspecialidadesDataGridView);
             this.Name = "cEspecialidades";
-            this.Text = "cEspecialidades";
+            this.Text = "Consulta de Especialidades";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EspecialidadesDataGridView)).EndInit();

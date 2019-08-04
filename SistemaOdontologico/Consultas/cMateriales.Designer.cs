@@ -123,18 +123,19 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // cMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 450);
+            this.ClientSize = new System.Drawing.Size(364, 390);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.EspecialidadesDataGridView);
             this.Name = "cMateriales";
-            this.Text = "cMateriales";
+            this.Text = "Consulta de Materiales";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EspecialidadesDataGridView)).EndInit();

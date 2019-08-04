@@ -49,6 +49,8 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RepetirClaveTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +112,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 187);
+            this.label7.Location = new System.Drawing.Point(12, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 6;
@@ -129,6 +131,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(191, 20);
             this.NombresTextBox.TabIndex = 9;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // EmailTextBox
             // 
@@ -136,6 +139,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(191, 20);
             this.EmailTextBox.TabIndex = 10;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // NivelUsuarioComboBox
             // 
@@ -154,6 +158,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(191, 20);
             this.UsuarioTextBox.TabIndex = 12;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioTextBox_KeyPress);
             // 
             // ClaveTextBox
             // 
@@ -167,7 +172,7 @@
             // 
             this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(96, 181);
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(96, 207);
             this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
             this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.FechaIngresoDateTimePicker.TabIndex = 14;
@@ -176,7 +181,7 @@
             // 
             this.NuevoButton.Image = global::SistemaOdontologico.Properties.Resources.new_file_icon1;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(24, 220);
+            this.NuevoButton.Location = new System.Drawing.Point(24, 253);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(64, 23);
             this.NuevoButton.TabIndex = 17;
@@ -189,7 +194,7 @@
             // 
             this.GuardarButton.Image = global::SistemaOdontologico.Properties.Resources.Save_icon1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(119, 220);
+            this.GuardarButton.Location = new System.Drawing.Point(119, 253);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(70, 23);
             this.GuardarButton.TabIndex = 16;
@@ -202,7 +207,7 @@
             // 
             this.EliminarButton.Image = global::SistemaOdontologico.Properties.Resources.Delete_group_icon1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(220, 220);
+            this.EliminarButton.Location = new System.Drawing.Point(220, 253);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(67, 23);
             this.EliminarButton.TabIndex = 15;
@@ -228,11 +233,30 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // RepetirClaveTextBox
+            // 
+            this.RepetirClaveTextBox.Location = new System.Drawing.Point(96, 181);
+            this.RepetirClaveTextBox.Name = "RepetirClaveTextBox";
+            this.RepetirClaveTextBox.Size = new System.Drawing.Size(191, 20);
+            this.RepetirClaveTextBox.TabIndex = 18;
+            this.RepetirClaveTextBox.UseSystemPasswordChar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Repetir clave";
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 263);
+            this.ClientSize = new System.Drawing.Size(307, 295);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.RepetirClaveTextBox);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
@@ -252,6 +276,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "rUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuarios";
@@ -283,5 +308,7 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox RepetirClaveTextBox;
     }
 }

@@ -99,6 +99,11 @@ namespace SistemaOdontologico.Registros
                 EmailTextBox.Focus();
                 paso = false;
             }
+            if(FechaIngresoDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaIngresoDateTimePicker, "No se puede registrar esta fecha.");
+                paso = false;
+            }
 
             return paso;
         }
@@ -213,6 +218,36 @@ namespace SistemaOdontologico.Registros
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar un Odontologo que no existe");
+        }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void CedulaMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void CelularMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

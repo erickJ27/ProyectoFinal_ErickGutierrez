@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaOdontologico.Consultas
+namespace SistemaOdontologico.Reportes
 {
-    public partial class cAlergias : Form
+    public partial class rptConsultaMedica : Form
     {
-        public cAlergias()
+        public rptConsultaMedica()
         {
             InitializeComponent();
         }

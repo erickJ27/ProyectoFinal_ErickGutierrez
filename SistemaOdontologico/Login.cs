@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using DAL;
 namespace SistemaOdontologico
 {
     public partial class Login : Form
@@ -19,66 +20,73 @@ namespace SistemaOdontologico
             InitializeComponent();
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        public void Logins()
         {
-            ContrasenaTextBox.UseSystemPasswordChar = false;
-        }
-        private void CleanProvider()
-        {
-            MyErrorProvider.Clear();
-        }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            bool paso = true;
-            Expression<Func<Usuarios, bool>> filtrar = x => true;
-            List<Usuarios> user = new List<Usuarios>();
-            Repositorio<Usuarios> db = new Repositorio<Usuarios>();
+            Repositorio<Usuarios> Repositorio = new Repositorio<Usuarios>();
+            Expression<Func<Usuarios, bool>> filtro = x => true;
+            List<Usuarios> usuario = new List<Usuarios>();
+            var username = UsuarioTextBox.Text;
+            var password = ContrasenaTextBox.Text;
+            filtro = x => x.Usuario.Equals(username);
+            usuario = Repositorio.GetList(filtro);
 
-            //Repositorio<Usuarios> db = new Repositorio<Usuarios>(new DAL.FerreteriaContexto());
-            var lista = new List<Usuarios>();
-
-            CleanProvider();
-            if (UsuarioTextBox.Text == string.Empty)
+            if (usuario.Exists(x => x.Usuario.Equals(username)))
             {
-                paso = false;
-                MyErrorProvider.SetError(UsuarioTextBox, "Incorrecto");
-
-            }
-            if (ContrasenaTextBox.Text == string.Empty)
-            {
-                paso = false;
-                MyErrorProvider.SetError(ContrasenaTextBox, "Incorrecto");
-
-            }
-            if (paso == false)
-            {
-                MessageBox.Show("Campos Vacios!!");
-                return;
-            }
-            if ((UsuarioTextBox.Text == "Admin") && (ContrasenaTextBox.Text == "Admin"))
-            {
-                this.Hide();
-                MainForm ver = new MainForm();
-                ver.Show();
-            }
-            else
-            {
-                filtrar = t => t.Usuario.Equals(UsuarioTextBox.Text);
-                user = db.GetList(filtrar);
-
-                if (user.Exists(x => x.Nombres == UsuarioTextBox.Text) && user.Exists(x => x.Clave == ContrasenaTextBox.Text))
+                if (usuario.Exists(x => x.Clave.Equals(Eramake.eCryptography.Encrypt(password))))
                 {
+                    List<Usuarios> id = Repositorio.GetList(U => U.Usuario == UsuarioTextBox.Text);
+                    MainForm f = new MainForm(id[0].UsuarioId);
+                    f.Show();
                     this.Hide();
-                    MainForm ver = new MainForm();
-                    ver.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Nombre de usuario o contraseña incorrecta!!");
-                    MyErrorProvider.SetError(ContrasenaTextBox, "Incorrecto");
-                    MyErrorProvider.SetError(UsuarioTextBox, "Incorrecto");
+                    MessageBox.Show("Clave incorrecta.", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
+            else
+            {
+                if (UsuarioTextBox.Text == string.Empty || ContrasenaTextBox.Text == string.Empty)
+                    MessageBox.Show("Ingrese en todos los campos.", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else if (!usuario.Exists(x => x.Usuario.Equals(username)))
+                    MessageBox.Show("Usuario no existe.", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            Logins();
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Repositorio<Usuarios> Repositorio = new Repositorio<Usuarios>();
+            List<Usuarios> user = new List<Usuarios>();
+            user = Repositorio.GetList(p => true);
+            if (user.Count == 0)
+            {
+                Repositorio.Guardar(new Usuarios()
+                {
+                    Usuario = "admin",
+                    Clave = Eramake.eCryptography.Encrypt("admin"),
+                    Nombres = "Erick Josue",
+                    Email = "ErickJosue@admin.com",
+                    FechaIngreso = DateTime.Now
+                });
+                MessageBox.Show(this, "Al no existir usuario(s) se ha creado uno por defecto.", "Clinica Dental Dr. Gutierrez", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MostrarCCheckBox.Checked == false)
+                ContrasenaTextBox.UseSystemPasswordChar = true;
+            else
+                ContrasenaTextBox.UseSystemPasswordChar = false;
+
         }
     }
 }

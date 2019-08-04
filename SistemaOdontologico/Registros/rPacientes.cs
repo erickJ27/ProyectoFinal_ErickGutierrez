@@ -22,6 +22,10 @@ namespace SistemaOdontologico.Registros
             InitializeComponent();
             this.Detalle1 = new List<PacienteAlergias>();
             this.Detalle2 = new List<PacienteVacunas>();
+            ListadoAlergias();
+            ListadoVacunas();
+            NombreAlergiaComboBox.Text = null;
+            NombreVacunaComboBox.Text = null;
             
         }
         private void CargarGrid1()
@@ -41,8 +45,7 @@ namespace SistemaOdontologico.Registros
         {
             IdNumericUpDown.Value = 0;
             NombresTextBox.Text = string.Empty;
-            MasculinoRadioButton.Checked = false;
-            FemeninoRadioButton.Checked = false;
+            SexoComboBox.Text = string.Empty;
             FechaNacimientoDateTimePicker.Value = DateTime.Now;
             GrupoSangineoComboBox.Text = string.Empty;
             CedulaMaskedTextBox.Text = string.Empty;
@@ -58,6 +61,25 @@ namespace SistemaOdontologico.Registros
 
             CargarGrid1();
             CargarGrid2();
+            MyErrorProvider.Clear();
+        }
+        private void ListadoVacunas()
+        {
+            Repositorio<Vacunas> db = new Repositorio<Vacunas>(new DAL.CentroOdontologicoContexto());
+            var lista = new List<Vacunas>();
+            lista = db.GetList(l => true);
+            NombreVacunaComboBox.DataSource = lista;
+            NombreVacunaComboBox.DisplayMember = "Descripcion";
+            NombreVacunaComboBox.ValueMember = "VacunasId";
+        }
+        private void ListadoAlergias()
+        {
+            Repositorio<Alergias> db = new Repositorio<Alergias>(new DAL.CentroOdontologicoContexto());
+            var lista = new List<Alergias>();
+            lista = db.GetList(l => true);
+            NombreAlergiaComboBox.DataSource = lista;
+            NombreAlergiaComboBox.DisplayMember = "Descripcion";
+            NombreAlergiaComboBox.ValueMember = "AlergiasId";
         }
 
         private Pacientes LLenarClase()
@@ -65,16 +87,7 @@ namespace SistemaOdontologico.Registros
             Pacientes pacientes = new Pacientes();
             pacientes.PacienteID = (int)IdNumericUpDown.Value;
             pacientes.Nombres = NombresTextBox.Text;
-
-            if (MasculinoRadioButton.Checked == true)
-            {
-                pacientes.Sexo = 'M';
-            }
-            if (FemeninoRadioButton.Checked == true)
-            {
-                pacientes.Sexo = 'F';
-            }
-
+            pacientes.Sexo = SexoComboBox.Text;
             pacientes.FechaNacimiento = FechaNacimientoDateTimePicker.Value;
             pacientes.GrupoSanguineo = GrupoSangineoComboBox.Text;
             pacientes.Cedula = CedulaMaskedTextBox.Text;
@@ -103,12 +116,7 @@ namespace SistemaOdontologico.Registros
         {
             IdNumericUpDown.Value = pacientes.PacienteID;
             NombresTextBox.Text = pacientes.Nombres;
-
-            if (pacientes.Sexo == 'M')
-                MasculinoRadioButton.Checked = true;
-            else
-                FemeninoRadioButton.Checked = true;
-
+            SexoComboBox.Text = pacientes.Sexo;
             FechaNacimientoDateTimePicker.Value = pacientes.FechaNacimiento;
             GrupoSangineoComboBox.Text = pacientes.GrupoSanguineo;
             CedulaMaskedTextBox.Text = pacientes.Cedula;
@@ -138,13 +146,8 @@ namespace SistemaOdontologico.Registros
                 NombresTextBox.Focus();
                 paso = false;
             }
-            /*if (MasculinoRadioButton.Checked == false   || FemeninoRadioButton.Checked == false)
-            {
-                MyErrorProvider.SetError(FemeninoRadioButton, "Seleccione una Sexo");
-                MasculinoRadioButton.Focus();
-                FemeninoRadioButton.Focus();
-                paso = false;
-            }*/
+            
+            
             if (string.IsNullOrWhiteSpace(GrupoSangineoComboBox.Text))
             {
                 MyErrorProvider.SetError(GrupoSangineoComboBox, "El campo GrupoSangineo no puede estar vacio");
@@ -193,9 +196,69 @@ namespace SistemaOdontologico.Registros
                 ObservacionTextBox.Focus();
                 paso = false;
             }
-            
+            if (FechaNacimientoDateTimePicker.Value < DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaNacimientoDateTimePicker, "No se puede registrar esta fecha.");
+                FechaNacimientoDateTimePicker.Focus();
+                paso = false;
+            }
+            if (FechaIngresoDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaIngresoDateTimePicker, "No se puede registrar esta fecha.");
+                FechaIngresoDateTimePicker.Focus();
+                paso = false;
+            }
+
 
             return paso;
+        }
+        public string id_vacu;
+        private bool ExisteEnGridVacunas()
+        {
+
+            bool paso = true;
+
+            if (VacunasDataGridView.RowCount > 0)
+            {
+                id_vacu = NombreVacunaComboBox.SelectedValue.ToString();
+                for (int i = 0; i < VacunasDataGridView.RowCount; i++)
+                {
+                    if (Convert.ToInt16(VacunasDataGridView.Rows[i].Cells["Id"].Value) == Convert.ToInt16(id_vacu))
+                    {
+                        MessageBox.Show("La vacuna ya ha sido ingresado");
+                        paso = false;
+
+                    }
+                }
+
+            }
+
+            return paso;
+
+        }
+        public string id_ale;
+        private bool ExisteEnGridAlergias()
+        {
+
+            bool paso = true;
+
+            if (AlergiasDataGridView.RowCount > 0)
+            {
+                id_ale = NombreAlergiaComboBox.SelectedValue.ToString();
+                for (int i = 0; i < AlergiasDataGridView.RowCount; i++)
+                {
+                    if (Convert.ToInt16(AlergiasDataGridView.Rows[i].Cells["Id"].Value) == Convert.ToInt16(id_ale))
+                    {
+                        MessageBox.Show("La Alergia ya ha sido ingresado");
+                        paso = false;
+
+                    }
+                }
+
+            }
+
+            return paso;
+
         }
 
         private void AlergiasButton_Click(object sender, EventArgs e)
@@ -204,11 +267,19 @@ namespace SistemaOdontologico.Registros
             List<PacienteAlergias> detalles = new List<PacienteAlergias>();
             Repositorio<Pacientes> db = new Repositorio<Pacientes>(new DAL.CentroOdontologicoContexto());
             if(AlergiasDataGridView.DataSource != null)
-            this.Detalle1 = (List<PacienteAlergias>)AlergiasDataGridView.DataSource;
+                this.Detalle1 = (List<PacienteAlergias>)AlergiasDataGridView.DataSource;
+
+            if (ExisteEnGridAlergias() == false)
+            {
+                MyErrorProvider.SetError(NombreAlergiaComboBox, "La alergia ya existe en el Grid");
+                NombreAlergiaComboBox.Focus();
+
+                return;
+            }
 
             this.Detalle1.Add(new PacienteAlergias()
             {
-                Id = 0,
+                Id = (int)NombreAlergiaComboBox.SelectedValue,
                 PacienteId = (int)IdNumericUpDown.Value,
                 Descripcion = NombreAlergiaComboBox.Text
             });
@@ -235,9 +306,17 @@ namespace SistemaOdontologico.Registros
             if (VacunasDataGridView.DataSource != null)
                 this.Detalle2 = (List<PacienteVacunas>)VacunasDataGridView.DataSource;
 
+            if (ExisteEnGridVacunas() == false)
+            {
+                MyErrorProvider.SetError(NombreVacunaComboBox, "La vacuna ya existe en el Grid");
+                NombreVacunaComboBox.Focus();
+
+                return;
+            }
+
             this.Detalle2.Add(new PacienteVacunas()
             {
-                Id = 0,
+                Id = (int)NombreVacunaComboBox.SelectedValue,
                 PacienteId = (int)IdNumericUpDown.Value,
                 Descripcion = NombreVacunaComboBox.Text
             });
@@ -332,6 +411,46 @@ namespace SistemaOdontologico.Registros
             }
             else
                 MessageBox.Show("Pacientes no encontrado");
+        }
+
+        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void EmailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void CedulaMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void CelularMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void NombreAlergiaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+        }
+
+        private void NombreVacunaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
         }
     }
 }

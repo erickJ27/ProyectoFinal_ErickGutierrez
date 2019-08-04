@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using SistemaOdontologico.Reportes;
 namespace SistemaOdontologico.Consultas
 {
     public partial class cMateriales : Form
@@ -57,6 +58,12 @@ namespace SistemaOdontologico.Consultas
             {
                 MessageBox.Show("Introdujo un dato incorrecto");
             }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            rptMateriales ver = new rptMateriales();
+            ver.Show();
         }
     }
 }

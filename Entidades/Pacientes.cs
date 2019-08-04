@@ -12,7 +12,7 @@ namespace Entidades
         [Key]
         public int PacienteID { get; set; }
         public string Nombres { get; set; }
-        public char Sexo { get; set; }
+        public string Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string GrupoSanguineo { get; set; }
         public string Cedula { get; set; }
@@ -30,7 +30,7 @@ namespace Entidades
         {
             PacienteID = 0;
             Nombres = string.Empty;
-            Sexo=' ';
+            Sexo=string.Empty;
             FechaNacimiento = DateTime.Now;
             GrupoSanguineo= string.Empty;
             Cedula = string.Empty;

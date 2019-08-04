@@ -14,17 +14,19 @@ namespace SistemaOdontologico
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public int id { get; set; }
+        public MainForm(int id)
         {
+            this.id = id;
             InitializeComponent();
         }
 
-        
+
 
         private void ConsultaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cUsuarios ver = new cUsuarios();
-            //ver.MdiParent = this;
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -32,7 +34,7 @@ namespace SistemaOdontologico
         private void ReportesDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptUsuarios ver = new rptUsuarios();
-            //ver.MdiParent = this;
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -40,7 +42,7 @@ namespace SistemaOdontologico
         private void RegistroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rUsuarios ver = new rUsuarios();
-            //ver.MdiParent = this;
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -157,6 +159,14 @@ namespace SistemaOdontologico
         private void ReporteDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptMateriales ver =new rptMateriales();
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
+
+        private void RegistroDeAlergiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAlergias ver = new rAlergias();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }

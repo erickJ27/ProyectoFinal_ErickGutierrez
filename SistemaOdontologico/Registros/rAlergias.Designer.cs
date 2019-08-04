@@ -1,6 +1,6 @@
 ﻿namespace SistemaOdontologico.Registros
 {
-    partial class Alergias
+    partial class rAlergias
     {
         /// <summary>
         /// Required designer variable.
@@ -44,55 +44,56 @@
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(96, 34);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(96, 43);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(191, 20);
-            this.DescripcionTextBox.TabIndex = 53;
+            this.DescripcionTextBox.TabIndex = 61;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 37);
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 52;
+            this.label1.TabIndex = 60;
             this.label1.Text = "Descripcion";
             // 
             // EliminarButton
             // 
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(212, 74);
+            this.EliminarButton.Location = new System.Drawing.Point(212, 83);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(67, 23);
-            this.EliminarButton.TabIndex = 49;
+            this.EliminarButton.TabIndex = 57;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // IdNumericUpDown
             // 
-            this.IdNumericUpDown.Location = new System.Drawing.Point(96, 7);
+            this.IdNumericUpDown.Location = new System.Drawing.Point(96, 16);
             this.IdNumericUpDown.Name = "IdNumericUpDown";
             this.IdNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.IdNumericUpDown.TabIndex = 48;
+            this.IdNumericUpDown.TabIndex = 56;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 9);
+            this.label8.Location = new System.Drawing.Point(12, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(16, 13);
-            this.label8.TabIndex = 46;
+            this.label8.TabIndex = 54;
             this.label8.Text = "Id";
             // 
             // NuevoButton
             // 
             this.NuevoButton.Image = global::SistemaOdontologico.Properties.Resources.new_file_icon1;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(16, 74);
+            this.NuevoButton.Location = new System.Drawing.Point(16, 83);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(64, 23);
-            this.NuevoButton.TabIndex = 51;
+            this.NuevoButton.TabIndex = 59;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -102,10 +103,10 @@
             // 
             this.GuardarButton.Image = global::SistemaOdontologico.Properties.Resources.Save_icon1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(111, 74);
+            this.GuardarButton.Location = new System.Drawing.Point(111, 83);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(70, 23);
-            this.GuardarButton.TabIndex = 50;
+            this.GuardarButton.TabIndex = 58;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -115,23 +116,24 @@
             // 
             this.BuscarButton.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(222, 4);
+            this.BuscarButton.Location = new System.Drawing.Point(222, 13);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(65, 23);
-            this.BuscarButton.TabIndex = 47;
+            this.BuscarButton.TabIndex = 55;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // Alergias
+            // rAlergias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 112);
+            this.ClientSize = new System.Drawing.Size(301, 126);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NuevoButton);
@@ -140,8 +142,8 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label8);
-            this.Name = "Alergias";
-            this.Text = "Registro de Alergias";
+            this.Name = "rAlergias";
+            this.Text = "rAlergias";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);

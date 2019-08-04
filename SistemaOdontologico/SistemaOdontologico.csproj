@@ -37,6 +37,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="eCryptography, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Eramake.eCryptography.1.1.6\lib\net45\eCryptography.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -61,12 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\cAlergias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consultas\cAlergias.Designer.cs">
-      <DependentUpon>cAlergias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Consultas\cConsultasMedicas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,17 +198,17 @@
       <DependentUpon>ListadoPacientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ListadoVacunas.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListadoVacunas.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reportes\ListaUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListaUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptConsultaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptConsultaMedica.Designer.cs">
+      <DependentUpon>rptConsultaMedica.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rptEspecialidades.cs">
       <SubType>Form</SubType>
@@ -324,13 +321,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoPacientes.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListadoVacunas.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ListadoVacunas.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListaUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListaUsuarios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptConsultaMedica.resx">
+      <DependentUpon>rptConsultaMedica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptEspecialidades.resx">
       <DependentUpon>rptEspecialidades.cs</DependentUpon>
@@ -401,6 +397,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close-2-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy-001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy-0011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secrecy-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

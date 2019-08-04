@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPacientes));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
-            this.MasculinoRadioButton = new System.Windows.Forms.RadioButton();
-            this.FemeninoRadioButton = new System.Windows.Forms.RadioButton();
             this.FechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.GrupoSangineoComboBox = new System.Windows.Forms.ComboBox();
             this.SeguroMedicoComboBox = new System.Windows.Forms.ComboBox();
@@ -56,23 +55,24 @@
             this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AlergiasButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.EliminarAlergiaButton = new System.Windows.Forms.Button();
+            this.NombreAlergiaComboBox = new System.Windows.Forms.ComboBox();
             this.AlergiasDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.EliminarVacunaButton = new System.Windows.Forms.Button();
+            this.NombreVacunaComboBox = new System.Windows.Forms.ComboBox();
             this.VacunasDataGridView = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.VacunasButton = new System.Windows.Forms.Button();
-            this.BuscarButton = new System.Windows.Forms.Button();
-            this.EliminarButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.NombreAlergiaComboBox = new System.Windows.Forms.ComboBox();
-            this.NombreVacunaComboBox = new System.Windows.Forms.ComboBox();
+            this.SexoComboBox = new System.Windows.Forms.ComboBox();
+            this.EliminarVacunaButton = new System.Windows.Forms.Button();
+            this.EliminarAlergiaButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AlergiasDataGridView)).BeginInit();
@@ -211,28 +211,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(250, 20);
             this.NombresTextBox.TabIndex = 17;
-            // 
-            // MasculinoRadioButton
-            // 
-            this.MasculinoRadioButton.AutoSize = true;
-            this.MasculinoRadioButton.Location = new System.Drawing.Point(123, 67);
-            this.MasculinoRadioButton.Name = "MasculinoRadioButton";
-            this.MasculinoRadioButton.Size = new System.Drawing.Size(73, 17);
-            this.MasculinoRadioButton.TabIndex = 18;
-            this.MasculinoRadioButton.TabStop = true;
-            this.MasculinoRadioButton.Text = "Masculino";
-            this.MasculinoRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FemeninoRadioButton
-            // 
-            this.FemeninoRadioButton.AutoSize = true;
-            this.FemeninoRadioButton.Location = new System.Drawing.Point(202, 67);
-            this.FemeninoRadioButton.Name = "FemeninoRadioButton";
-            this.FemeninoRadioButton.Size = new System.Drawing.Size(71, 17);
-            this.FemeninoRadioButton.TabIndex = 19;
-            this.FemeninoRadioButton.TabStop = true;
-            this.FemeninoRadioButton.Text = "Femenino";
-            this.FemeninoRadioButton.UseVisualStyleBackColor = true;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // FechaNacimientoDateTimePicker
             // 
@@ -288,6 +267,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(250, 20);
             this.EmailTextBox.TabIndex = 27;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // ObservacionTextBox
             // 
@@ -339,18 +319,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alergias";
             // 
-            // EliminarAlergiaButton
+            // NombreAlergiaComboBox
             // 
-            this.EliminarAlergiaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
-            this.EliminarAlergiaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarAlergiaButton.Location = new System.Drawing.Point(18, 147);
-            this.EliminarAlergiaButton.Name = "EliminarAlergiaButton";
-            this.EliminarAlergiaButton.Size = new System.Drawing.Size(102, 23);
-            this.EliminarAlergiaButton.TabIndex = 43;
-            this.EliminarAlergiaButton.Text = "Eliminar Alergia";
-            this.EliminarAlergiaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarAlergiaButton.UseVisualStyleBackColor = true;
-            this.EliminarAlergiaButton.Click += new System.EventHandler(this.EliminarAlergiaButton_Click);
+            this.NombreAlergiaComboBox.FormattingEnabled = true;
+            this.NombreAlergiaComboBox.Location = new System.Drawing.Point(101, 23);
+            this.NombreAlergiaComboBox.Name = "NombreAlergiaComboBox";
+            this.NombreAlergiaComboBox.Size = new System.Drawing.Size(96, 21);
+            this.NombreAlergiaComboBox.TabIndex = 44;
+            this.NombreAlergiaComboBox.SelectedIndexChanged += new System.EventHandler(this.NombreAlergiaComboBox_SelectedIndexChanged);
             // 
             // AlergiasDataGridView
             // 
@@ -374,18 +350,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vacunas";
             // 
-            // EliminarVacunaButton
+            // NombreVacunaComboBox
             // 
-            this.EliminarVacunaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
-            this.EliminarVacunaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarVacunaButton.Location = new System.Drawing.Point(18, 147);
-            this.EliminarVacunaButton.Name = "EliminarVacunaButton";
-            this.EliminarVacunaButton.Size = new System.Drawing.Size(112, 23);
-            this.EliminarVacunaButton.TabIndex = 43;
-            this.EliminarVacunaButton.Text = "Eliminar Vacuna";
-            this.EliminarVacunaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarVacunaButton.UseVisualStyleBackColor = true;
-            this.EliminarVacunaButton.Click += new System.EventHandler(this.EliminarVacunaButton_Click);
+            this.NombreVacunaComboBox.FormattingEnabled = true;
+            this.NombreVacunaComboBox.Location = new System.Drawing.Point(101, 23);
+            this.NombreVacunaComboBox.Name = "NombreVacunaComboBox";
+            this.NombreVacunaComboBox.Size = new System.Drawing.Size(96, 21);
+            this.NombreVacunaComboBox.TabIndex = 45;
+            this.NombreVacunaComboBox.SelectedIndexChanged += new System.EventHandler(this.NombreVacunaComboBox_SelectedIndexChanged);
             // 
             // VacunasDataGridView
             // 
@@ -413,6 +385,74 @@
             this.VacunasButton.Text = "+";
             this.VacunasButton.UseVisualStyleBackColor = true;
             this.VacunasButton.Click += new System.EventHandler(this.VacunasButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // CedulaMaskedTextBox
+            // 
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(123, 143);
+            this.CedulaMaskedTextBox.Mask = "000-0000000-0";
+            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CedulaMaskedTextBox.TabIndex = 45;
+            this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
+            // 
+            // TelefonoMaskedTextBox
+            // 
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(123, 169);
+            this.TelefonoMaskedTextBox.Mask = "000-000-0000";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TelefonoMaskedTextBox.TabIndex = 46;
+            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
+            // 
+            // CelularMaskedTextBox
+            // 
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(273, 169);
+            this.CelularMaskedTextBox.Mask = "000-000-0000";
+            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
+            this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CelularMaskedTextBox.TabIndex = 47;
+            this.CelularMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularMaskedTextBox_KeyPress);
+            // 
+            // SexoComboBox
+            // 
+            this.SexoComboBox.FormattingEnabled = true;
+            this.SexoComboBox.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.SexoComboBox.Location = new System.Drawing.Point(123, 66);
+            this.SexoComboBox.Name = "SexoComboBox";
+            this.SexoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SexoComboBox.TabIndex = 48;
+            // 
+            // EliminarVacunaButton
+            // 
+            this.EliminarVacunaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
+            this.EliminarVacunaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarVacunaButton.Location = new System.Drawing.Point(18, 147);
+            this.EliminarVacunaButton.Name = "EliminarVacunaButton";
+            this.EliminarVacunaButton.Size = new System.Drawing.Size(112, 23);
+            this.EliminarVacunaButton.TabIndex = 43;
+            this.EliminarVacunaButton.Text = "Eliminar Vacuna";
+            this.EliminarVacunaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarVacunaButton.UseVisualStyleBackColor = true;
+            this.EliminarVacunaButton.Click += new System.EventHandler(this.EliminarVacunaButton_Click);
+            // 
+            // EliminarAlergiaButton
+            // 
+            this.EliminarAlergiaButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
+            this.EliminarAlergiaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarAlergiaButton.Location = new System.Drawing.Point(18, 147);
+            this.EliminarAlergiaButton.Name = "EliminarAlergiaButton";
+            this.EliminarAlergiaButton.Size = new System.Drawing.Size(102, 23);
+            this.EliminarAlergiaButton.TabIndex = 43;
+            this.EliminarAlergiaButton.Text = "Eliminar Alergia";
+            this.EliminarAlergiaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarAlergiaButton.UseVisualStyleBackColor = true;
+            this.EliminarAlergiaButton.Click += new System.EventHandler(this.EliminarAlergiaButton_Click);
             // 
             // BuscarButton
             // 
@@ -466,55 +506,12 @@
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
-            // MyErrorProvider
-            // 
-            this.MyErrorProvider.ContainerControl = this;
-            // 
-            // CedulaMaskedTextBox
-            // 
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(123, 143);
-            this.CedulaMaskedTextBox.Mask = "000-0000000-0";
-            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
-            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CedulaMaskedTextBox.TabIndex = 45;
-            // 
-            // TelefonoMaskedTextBox
-            // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(123, 169);
-            this.TelefonoMaskedTextBox.Mask = "000-000-0000";
-            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TelefonoMaskedTextBox.TabIndex = 46;
-            // 
-            // CelularMaskedTextBox
-            // 
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(273, 169);
-            this.CelularMaskedTextBox.Mask = "000-000-0000";
-            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
-            this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CelularMaskedTextBox.TabIndex = 47;
-            // 
-            // NombreAlergiaComboBox
-            // 
-            this.NombreAlergiaComboBox.FormattingEnabled = true;
-            this.NombreAlergiaComboBox.Location = new System.Drawing.Point(101, 23);
-            this.NombreAlergiaComboBox.Name = "NombreAlergiaComboBox";
-            this.NombreAlergiaComboBox.Size = new System.Drawing.Size(96, 21);
-            this.NombreAlergiaComboBox.TabIndex = 44;
-            // 
-            // NombreVacunaComboBox
-            // 
-            this.NombreVacunaComboBox.FormattingEnabled = true;
-            this.NombreVacunaComboBox.Location = new System.Drawing.Point(101, 23);
-            this.NombreVacunaComboBox.Name = "NombreVacunaComboBox";
-            this.NombreVacunaComboBox.Size = new System.Drawing.Size(96, 21);
-            this.NombreVacunaComboBox.TabIndex = 45;
-            // 
             // rPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 467);
+            this.Controls.Add(this.SexoComboBox);
             this.Controls.Add(this.CelularMaskedTextBox);
             this.Controls.Add(this.TelefonoMaskedTextBox);
             this.Controls.Add(this.CedulaMaskedTextBox);
@@ -532,8 +529,6 @@
             this.Controls.Add(this.SeguroMedicoComboBox);
             this.Controls.Add(this.GrupoSangineoComboBox);
             this.Controls.Add(this.FechaNacimientoDateTimePicker);
-            this.Controls.Add(this.FemeninoRadioButton);
-            this.Controls.Add(this.MasculinoRadioButton);
             this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label12);
@@ -548,6 +543,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "rPacientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Pacientes";
@@ -581,8 +579,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown IdNumericUpDown;
         private System.Windows.Forms.TextBox NombresTextBox;
-        private System.Windows.Forms.RadioButton MasculinoRadioButton;
-        private System.Windows.Forms.RadioButton FemeninoRadioButton;
         private System.Windows.Forms.DateTimePicker FechaNacimientoDateTimePicker;
         private System.Windows.Forms.ComboBox GrupoSangineoComboBox;
         private System.Windows.Forms.ComboBox SeguroMedicoComboBox;
@@ -610,5 +606,6 @@
         private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
         private System.Windows.Forms.ComboBox NombreAlergiaComboBox;
         private System.Windows.Forms.ComboBox NombreVacunaComboBox;
+        private System.Windows.Forms.ComboBox SexoComboBox;
     }
 }

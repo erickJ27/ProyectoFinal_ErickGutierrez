@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using SistemaOdontologico.Reportes;
 
 
 namespace SistemaOdontologico.Consultas
@@ -59,6 +60,12 @@ namespace SistemaOdontologico.Consultas
             {
                 MessageBox.Show("Introdujo un dato incorrecto");
             }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            rptEspecialidades ver =new rptEspecialidades();
+            ver.Show();
         }
     }
 }

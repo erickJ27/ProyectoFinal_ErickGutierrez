@@ -12,9 +12,9 @@ using BLL;
 
 namespace SistemaOdontologico.Registros
 {
-    public partial class Alergias : Form
+    public partial class rAlergias : Form
     {
-        public Alergias()
+        public rAlergias()
         {
             InitializeComponent();
         }
@@ -23,13 +23,14 @@ namespace SistemaOdontologico.Registros
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
         }
-        //private Vacunas LlenarClase()
-        //{
-        //    Alergias vacunas = new Alergias();
-        //    vacunas. = (int)IdNumericUpDown.Value;
-        //    alergias.Descripcion = DescripcionTextBox.Text;
-        //    return vacunas;
-        //}
+        private Alergias LlenarClase()
+        {
+            Alergias alergias = new Alergias();
+            alergias.AlergiasId = (int)IdNumericUpDown.Value;
+            alergias.Descripcion = DescripcionTextBox.Text;
+            return alergias;
+        }
+        
         private bool ExisteEnLaBaseDeDatos()
         {
             Repositorio<Alergias> db = new Repositorio<Alergias>();
@@ -50,19 +51,88 @@ namespace SistemaOdontologico.Registros
             }
             return paso;
         }
-        //private void LLenarCampo(Alergias alergias)
-        //{
-        //    IdNumericUpDown.Value = alergias.VacunasId;
-        //    DescripcionTextBox.Text = alergias.Descripcion;
-        //}
+        private void LLenarCampo(Alergias alergias)
+        {
+            IdNumericUpDown.Value = alergias.AlergiasId;
+            DescripcionTextBox.Text = alergias.Descripcion;
+        }
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+           int id;
+            Alergias alergias = new Alergias();
+            Repositorio<Alergias> db = new Repositorio<Alergias>();
+            int.TryParse(IdNumericUpDown.Text, out id);
+            Limpiar();
+            alergias = db.Buscar(id);
+
+            if (alergias != null)
+            {
+                LLenarCampo(alergias);
+            }
+            else
+                MessageBox.Show("alergia no encontrado");  
+        }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+            bool paso = false;
+            Repositorio<Alergias> db = new Repositorio<Alergias>();
+            Alergias A = new Alergias();
+            if (!Validar())
+                return;
 
+            A = LlenarClase();
+            if (IdNumericUpDown.Value == 0)
+            {
+                paso = db.Guardar(A);
+            }
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar una Alergia que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                paso = db.Modificar(A);
+            }
+            if (!ExisteEnLaBaseDeDatos())
+            {
+                if (paso)
+                    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (paso)
+                    MessageBox.Show("Modificado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Limpiar();
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            Repositorio<Alergias> db = new Repositorio<Alergias>();
+            if (!ExisteEnLaBaseDeDatos())
+            {
+                MessageBox.Show("No se puede Eliminar una alergia que no existe", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MyErrorProvider.Clear();
+            int id;
+            int.TryParse(IdNumericUpDown.Text, out id);
+
+            Limpiar();
+
+            if (db.Eliminar(id))
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar una alergia que no existe");
         }
     }
 }

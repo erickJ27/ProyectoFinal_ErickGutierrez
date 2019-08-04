@@ -21,7 +21,8 @@ namespace SistemaOdontologico.Registros
         {
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
-
+            ExistenciaNumericUpDown.Value = 0;
+            CostoUNumericUpDown.Value = 0;
         }
         private Materiales LlenarClase()
         {

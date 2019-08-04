@@ -184,6 +184,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // OdontologosDataGridView
             // 
@@ -205,7 +206,7 @@
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.OdontologosDataGridView);
             this.Name = "cOdontologos";
-            this.Text = "cOdontologos";
+            this.Text = "Consulta de Materiales";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

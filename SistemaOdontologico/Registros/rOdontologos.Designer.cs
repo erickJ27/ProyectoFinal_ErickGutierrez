@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rOdontologos));
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(250, 20);
             this.EmailTextBox.TabIndex = 63;
+            this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBox_KeyPress);
             // 
             // DireccionTextBox
             // 
@@ -77,6 +79,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(250, 20);
             this.NombresTextBox.TabIndex = 53;
+            this.NombresTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombresTextBox_KeyPress);
             // 
             // IdNumericUpDown
             // 
@@ -256,6 +259,7 @@
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CedulaMaskedTextBox.TabIndex = 73;
+            this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
             // 
             // TelefonoMaskedTextBox
             // 
@@ -264,6 +268,7 @@
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.TelefonoMaskedTextBox.TabIndex = 74;
+            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
             // 
             // CelularMaskedTextBox
             // 
@@ -272,12 +277,13 @@
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CelularMaskedTextBox.TabIndex = 75;
+            this.CelularMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularMaskedTextBox_KeyPress);
             // 
             // rOdontologos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 276);
+            this.ClientSize = new System.Drawing.Size(378, 276);
             this.Controls.Add(this.CelularMaskedTextBox);
             this.Controls.Add(this.TelefonoMaskedTextBox);
             this.Controls.Add(this.CedulaMaskedTextBox);
@@ -301,6 +307,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rOdontologos";
             this.Text = "Registro de Odontologos";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();

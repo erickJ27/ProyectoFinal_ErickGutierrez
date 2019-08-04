@@ -153,6 +153,18 @@ namespace SistemaOdontologico.Registros
                 TratamientoTextBox.Focus();
                 paso = false;
             }
+            if (FechaActualDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaActualDateTimePicker, "No se puede registrar esta fecha.");
+                FechaActualDateTimePicker.Focus();
+                paso = false;
+            }
+            if(FechaConsultaProximaDateTimePicker.Value > FechaActualDateTimePicker.Value)
+            {
+                MyErrorProvider.SetError(FechaConsultaProximaDateTimePicker, "La proxima Consulta no puede ser el mismo dia.");
+                FechaConsultaProximaDateTimePicker.Focus();
+                paso = false;
+            }
             return paso;
         }
         private void ListadoPacientes()
@@ -329,9 +341,15 @@ namespace SistemaOdontologico.Registros
         {
             List<MaterialesDetalle> detalles = new List<MaterialesDetalle>();
             Repositorio<ConsultasM> db = new Repositorio<ConsultasM>(new DAL.CentroOdontologicoContexto());
+            if (CantidadNumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(CantidadNumericUpDown, "Cantidad invalidad");
+                CantidadNumericUpDown.Focus();
+                return;
+            }
             if (MaterialesDataGridView.DataSource != null)
                 this.Detalle = (List<MaterialesDetalle>)MaterialesDataGridView.DataSource;
-
+            
             if (ExisteEnGrid() == false)
             {
                 MyErrorProvider.SetError(MaterialesComboBox, "El Material ya existe en el Grid");
@@ -390,7 +408,7 @@ namespace SistemaOdontologico.Registros
 
         private void MaterialesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MyErrorProvider.Clear();
             LlenarPrecio();
            
 
@@ -403,6 +421,11 @@ namespace SistemaOdontologico.Registros
                 Detalle.RemoveAt(MaterialesDataGridView.CurrentRow.Index);
                 CargarGrid();
             }
+        }
+
+        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
         }
     }
 }
