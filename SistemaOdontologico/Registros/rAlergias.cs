@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using DAL;
 
 namespace SistemaOdontologico.Registros
 {
@@ -56,6 +57,37 @@ namespace SistemaOdontologico.Registros
             IdNumericUpDown.Value = alergias.AlergiasId;
             DescripcionTextBox.Text = alergias.Descripcion;
         }
+        public static bool RepetirAlergias(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Alergias.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirAlergias(DescripcionTextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "No se puede crear una alergia mas de 1 veces.");
+                DescripcionTextBox.Focus();
+                paso = false;
+            }
+            return paso;
+        }
         private void BuscarButton_Click(object sender, EventArgs e)
         {
            int id;
@@ -89,6 +121,8 @@ namespace SistemaOdontologico.Registros
             A = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
+                if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(A);
             }
             else
@@ -133,6 +167,12 @@ namespace SistemaOdontologico.Registros
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MyErrorProvider.SetError(IdNumericUpDown, "No se puede eliminar una alergia que no existe");
+        }
+
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

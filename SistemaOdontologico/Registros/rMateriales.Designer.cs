@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rMateriales));
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.NuevoButton = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(167, 20);
             this.DescripcionTextBox.TabIndex = 45;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // label2
             // 
@@ -92,6 +94,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(212, 143);
             this.EliminarButton.Name = "EliminarButton";
@@ -189,6 +192,7 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rMateriales";
             this.Text = "Registro de Materiales";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();

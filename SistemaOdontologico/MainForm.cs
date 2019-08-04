@@ -50,7 +50,7 @@ namespace SistemaOdontologico
         private void RegistroDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rPacientes ver = new rPacientes();
-            //ver.MdiParent = this;
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -58,7 +58,7 @@ namespace SistemaOdontologico
         private void RegistroDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rOdontologos ver = new rOdontologos();
-            //ver.MdiParent = this;
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -66,6 +66,7 @@ namespace SistemaOdontologico
         private void RegistroDeConsultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rConsultas ver = new rConsultas();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -73,6 +74,7 @@ namespace SistemaOdontologico
         private void ConsultaDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cPacientes ver = new cPacientes();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -80,6 +82,7 @@ namespace SistemaOdontologico
         private void RegistroDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rEspecialidades ver = new rEspecialidades();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -87,6 +90,7 @@ namespace SistemaOdontologico
         private void RegistroDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rMateriales ver = new rMateriales();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -94,6 +98,7 @@ namespace SistemaOdontologico
         private void ConsultaDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cOdontologos ver = new cOdontologos();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -101,6 +106,7 @@ namespace SistemaOdontologico
         private void ConsultaDeConsultasMedicasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cConsultasMedicas ver = new cConsultasMedicas();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
 
@@ -109,6 +115,7 @@ namespace SistemaOdontologico
         private void ConsultaDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cEspecialidades ver = new cEspecialidades();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -116,6 +123,7 @@ namespace SistemaOdontologico
         private void ConsultaDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cMateriales ver = new cMateriales();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -123,6 +131,7 @@ namespace SistemaOdontologico
         private void RegistroDeVacunasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rVacunas ver = new rVacunas();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -130,6 +139,7 @@ namespace SistemaOdontologico
         private void ConsultaDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cVacunas ver = new cVacunas();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -137,6 +147,7 @@ namespace SistemaOdontologico
         private void ReporteDeOdontologosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptOdontologos ver = new rptOdontologos();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
 
@@ -145,6 +156,7 @@ namespace SistemaOdontologico
         private void ReporteDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptPacientes ver = new rptPacientes();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -152,6 +164,7 @@ namespace SistemaOdontologico
         private void ReporteDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptEspecialidades ver = new rptEspecialidades();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }
@@ -159,6 +172,7 @@ namespace SistemaOdontologico
         private void ReporteDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rptMateriales ver =new rptMateriales();
+            ver.MdiParent = this;
             ver.StartPosition = FormStartPosition.CenterScreen;
             ver.Show();
         }

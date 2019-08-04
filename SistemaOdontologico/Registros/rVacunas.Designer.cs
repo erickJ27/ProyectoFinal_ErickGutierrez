@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rVacunas));
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(191, 20);
             this.DescripcionTextBox.TabIndex = 45;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // label1
             // 
@@ -60,6 +62,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(212, 74);
             this.EliminarButton.Name = "EliminarButton";
@@ -142,6 +145,7 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rVacunas";
             this.Text = "Registro de Vacunas";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();

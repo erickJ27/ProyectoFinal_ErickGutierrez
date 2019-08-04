@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cPacientes));
             this.FiltrarFechaCheckBox = new System.Windows.Forms.CheckBox();
             this.PacientesDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.PacientesDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cPacientes";
             this.Text = "Consulta de Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.PacientesDataGridView)).EndInit();

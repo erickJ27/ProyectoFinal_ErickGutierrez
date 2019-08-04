@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using DAL;
 
 namespace SistemaOdontologico.Registros
 {
@@ -56,6 +57,38 @@ namespace SistemaOdontologico.Registros
             DescripcionTextBox.Text = vacunas.Descripcion;
         }
 
+        public static bool RepetirVacunas(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Vacunas.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirVacunas(DescripcionTextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "No se puede crear una vacuna mas de 1 veces.");
+                DescripcionTextBox.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -72,6 +105,8 @@ namespace SistemaOdontologico.Registros
             v = LlenarClase();
             if (IdNumericUpDown.Value == 0)
             {
+                if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(v);
             }
             else
@@ -133,6 +168,12 @@ namespace SistemaOdontologico.Registros
             }
             else
                 MessageBox.Show("Vacuna no encontrado");
+        }
+
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

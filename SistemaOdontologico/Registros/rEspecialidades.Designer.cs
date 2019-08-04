@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEspecialidades));
             this.EliminarButton = new System.Windows.Forms.Button();
             this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Image = global::SistemaOdontologico.Properties.Resources.Close_2_icon1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(212, 88);
             this.EliminarButton.Name = "EliminarButton";
@@ -85,6 +87,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(191, 20);
             this.DescripcionTextBox.TabIndex = 37;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // MyErrorProvider
             // 
@@ -142,6 +145,7 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.label8);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rEspecialidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Especialidades";

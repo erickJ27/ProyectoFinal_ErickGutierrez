@@ -195,6 +195,7 @@ namespace SistemaOdontologico.Registros
         private void NuevaEspecialidadButton_Click(object sender, EventArgs e)
         {
             rEspecialidades espe = new rEspecialidades();
+            
             espe.StartPosition = FormStartPosition.CenterScreen;
             espe.ShowDialog();
             ListadoEspecialidades();

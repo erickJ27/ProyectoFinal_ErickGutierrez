@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cVacunas));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -134,6 +135,7 @@
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.VacunasDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cVacunas";
             this.Text = "Consulta de Vacunas";
             this.groupBox2.ResumeLayout(false);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using DAL;
 namespace SistemaOdontologico.Registros
 {
     public partial class rMateriales : Form
@@ -51,6 +52,12 @@ namespace SistemaOdontologico.Registros
                 DescripcionTextBox.Focus();
                 paso = false;
             }
+            if (ExistenciaNumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(ExistenciaNumericUpDown, "Al crear el producto no puede la existencia estar en 0");
+                ExistenciaNumericUpDown.Focus();
+                paso = false;
+            }
             if (CostoUNumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(CostoUNumericUpDown, "El campo Costo Unidad no puede estar vacio");
@@ -66,6 +73,37 @@ namespace SistemaOdontologico.Registros
             ExistenciaNumericUpDown.Value = m.Existencia;
             CostoUNumericUpDown.Value = m.CostoUnidad;
 
+        }
+        public static bool RepetirMaterial(string descripcion)
+        {
+            bool paso = false;
+            CentroOdontologicoContexto db = new CentroOdontologicoContexto();
+
+            try
+            {
+                if (db.Materiales.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        private bool ValidarRepetir()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (RepetirMaterial(DescripcionTextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "Ya existe un material con ese nombre");
+                DescripcionTextBox.Focus();
+                paso = false;
+            }
+            return paso;
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -83,7 +121,8 @@ namespace SistemaOdontologico.Registros
 
             m = LlenarClase();
             if (IdNumericUpDown.Value == 0)
-            {
+            {   if (!ValidarRepetir())
+                    return;
                 paso = db.Guardar(m);
             }
             else
@@ -145,6 +184,12 @@ namespace SistemaOdontologico.Registros
             }
             else
                 MessageBox.Show("Material no encontrado");
+        }
+
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

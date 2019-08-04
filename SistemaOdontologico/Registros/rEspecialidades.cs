@@ -65,6 +65,7 @@ namespace SistemaOdontologico.Registros
             if (RepetirEspecialidad(DescripcionTextBox.Text))
             {
                 MyErrorProvider.SetError(DescripcionTextBox, "No se puede crear una especialidad mas de 1 veces.");
+                DescripcionTextBox.Focus();
                 paso = false;
             }
             return paso;
@@ -169,6 +170,10 @@ namespace SistemaOdontologico.Registros
                 MessageBox.Show("Especialidad no encontrado");
         }
 
-        
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

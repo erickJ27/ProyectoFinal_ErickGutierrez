@@ -326,6 +326,7 @@ namespace SistemaOdontologico.Registros
         private void NuevoPacienteButton_Click(object sender, EventArgs e)
         {
             rPacientes p = new rPacientes();
+            
             p.ShowDialog();
             ListadoPacientes();
         }
@@ -333,6 +334,7 @@ namespace SistemaOdontologico.Registros
         private void NuevoOdontologoButton_Click(object sender, EventArgs e)
         {
             rOdontologos o = new rOdontologos();
+            
             o.ShowDialog();
             ListadoOdontologos();
         }
