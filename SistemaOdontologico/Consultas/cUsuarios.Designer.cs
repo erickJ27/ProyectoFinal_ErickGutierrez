@@ -167,7 +167,7 @@
             // 
             // ConsultarButton
             // 
-            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.Microsoft_Query_icon;
+            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(548, 46);
             this.ConsultarButton.Name = "ConsultarButton";
@@ -206,7 +206,6 @@
             this.Name = "cUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Usuarios";
-            
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

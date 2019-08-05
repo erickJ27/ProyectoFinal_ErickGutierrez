@@ -16,9 +16,12 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cEspecialidades : Form
     {
+        public List<Especialidades> Lista;
+
         public cEspecialidades()
         {
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -53,8 +56,8 @@ namespace SistemaOdontologico.Consultas
                 {
                     lista = dbe.GetList(p => true);
                 }
-                EspecialidadesDataGridView.DataSource = null;
-                EspecialidadesDataGridView.DataSource = lista;
+                Lista = lista;
+                EspecialidadesDataGridView.DataSource = Lista;
             }
             catch (Exception)
             {
@@ -64,8 +67,16 @@ namespace SistemaOdontologico.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            rptEspecialidades ver =new rptEspecialidades();
-            ver.Show();
+            if (EspecialidadesDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptEspecialidades a = new rptEspecialidades(Lista);
+                a.ShowDialog();
+            }
         }
     }
 }

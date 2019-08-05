@@ -195,7 +195,7 @@
             // 
             // ConsultarButton
             // 
-            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.Microsoft_Query_icon;
+            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(517, 63);
             this.ConsultarButton.Name = "ConsultarButton";

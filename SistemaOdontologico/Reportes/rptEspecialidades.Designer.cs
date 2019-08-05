@@ -50,6 +50,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "rptEspecialidades";
             this.Text = "rptEspecialidades";
+            this.Load += new System.EventHandler(this.RptEspecialidades_Load);
             this.ResumeLayout(false);
 
         }

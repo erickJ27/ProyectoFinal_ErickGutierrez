@@ -84,9 +84,7 @@
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "Id",
-            "Nombres",
-            "Email",
-            "Usuario"});
+            "Descripcion"});
             this.FiltroComboBox.Location = new System.Drawing.Point(7, 27);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
@@ -102,7 +100,7 @@
             // 
             // ConsultarButton
             // 
-            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.Microsoft_Query_icon;
+            this.ConsultarButton.Image = global::SistemaOdontologico.Properties.Resources.search3_icon;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(272, 32);
             this.ConsultarButton.Name = "ConsultarButton";
