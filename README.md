@@ -16,7 +16,7 @@
 
 Este Sistema esta Realizado para el uso en consultas medicas de odontologo Bridando Facilidad a la hora de las consultas 
 
-![principal mas detalle](https://user-images.githubusercontent.com/50554753/62085992-faf15000-b22a-11e9-8dd0-37016e5da6e7.PNG)
+![ima](https://user-images.githubusercontent.com/50554753/62496646-95134400-b7a7-11e9-8247-6d71365c5c88.PNG)
 
 !
 ## REQUISITOS DE INSTALACION
