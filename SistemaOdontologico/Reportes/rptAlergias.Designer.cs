@@ -1,6 +1,6 @@
 ﻿namespace SistemaOdontologico.Reportes
 {
-    partial class rptConsultaMedica
+    partial class rptAlergias
     {
         /// <summary>
         /// Required designer variable.
@@ -42,14 +42,15 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // rptConsultaMedica
+            // rptAlergias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "rptConsultaMedica";
-            this.Text = "Reporte Consulta Medica";
+            this.Name = "rptAlergias";
+            this.Text = "Reportes de Alergias";
+            this.Load += new System.EventHandler(this.RptAlergias_Load);
             this.ResumeLayout(false);
 
         }

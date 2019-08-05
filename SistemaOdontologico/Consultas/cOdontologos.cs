@@ -15,9 +15,12 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cOdontologos : Form
     {
+        public List<Odontologos> Lista;
         public cOdontologos()
         {
+            
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -79,8 +82,8 @@ namespace SistemaOdontologico.Consultas
                         lista = lista.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
                     }
 
-                    OdontologosDataGridView.DataSource = null;
-                    OdontologosDataGridView.DataSource = lista;
+                    Lista = lista;
+                    OdontologosDataGridView.DataSource = Lista;
                 }
                 catch (Exception)
                 {
@@ -89,8 +92,7 @@ namespace SistemaOdontologico.Consultas
             }
             else
             {
-                try
-                {
+                
                     if (CriterioTextBox.Text.Trim().Length > 0)
                     {
                         switch (FiltroComboBox.Text)
@@ -138,20 +140,24 @@ namespace SistemaOdontologico.Consultas
                     {
                         lista = dbe.GetList(p => true);
                     }
-                    OdontologosDataGridView.DataSource = null;
-                    OdontologosDataGridView.DataSource = lista;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Introdujo un dato incorrecto");
-                }
+                    Lista = lista;
+                    OdontologosDataGridView.DataSource = Lista;
+
             }
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            rptOdontologos ver =new  rptOdontologos();
-            ver.Show();
+            if (OdontologosDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptOdontologos o = new rptOdontologos(Lista);
+                o.ShowDialog();
+            }
         }
     }
 }

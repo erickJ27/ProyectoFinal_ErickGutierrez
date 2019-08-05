@@ -196,7 +196,7 @@ namespace SistemaOdontologico.Registros
                 ObservacionTextBox.Focus();
                 paso = false;
             }
-            if (FechaNacimientoDateTimePicker.Value < DateTime.Now)
+            if (FechaNacimientoDateTimePicker.Value > FechaIngresoDateTimePicker.Value)
             {
                 MyErrorProvider.SetError(FechaNacimientoDateTimePicker, "No se puede registrar esta fecha.");
                 FechaNacimientoDateTimePicker.Focus();
@@ -268,6 +268,12 @@ namespace SistemaOdontologico.Registros
             Repositorio<Pacientes> db = new Repositorio<Pacientes>(new DAL.CentroOdontologicoContexto());
             if(AlergiasDataGridView.DataSource != null)
                 this.Detalle1 = (List<PacienteAlergias>)AlergiasDataGridView.DataSource;
+            if (NombreAlergiaComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(NombreAlergiaComboBox, "No a seleccionado una Alergia");
+                NombreAlergiaComboBox.Focus();
+                return;
+            }
 
             if (ExisteEnGridAlergias() == false)
             {
@@ -305,6 +311,13 @@ namespace SistemaOdontologico.Registros
             Repositorio<Pacientes> db = new Repositorio<Pacientes>(new DAL.CentroOdontologicoContexto());
             if (VacunasDataGridView.DataSource != null)
                 this.Detalle2 = (List<PacienteVacunas>)VacunasDataGridView.DataSource;
+
+            if (NombreVacunaComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(NombreVacunaComboBox, "No a seleccionado una Vacuna");
+                NombreVacunaComboBox.Focus();
+                return;
+            }
 
             if (ExisteEnGridVacunas() == false)
             {

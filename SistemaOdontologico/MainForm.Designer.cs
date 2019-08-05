@@ -78,14 +78,14 @@
             // desconectarseToolStripMenuItem
             // 
             this.desconectarseToolStripMenuItem.Name = "desconectarseToolStripMenuItem";
-            this.desconectarseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desconectarseToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.desconectarseToolStripMenuItem.Text = "Desconectarse";
             this.desconectarseToolStripMenuItem.Click += new System.EventHandler(this.DesconectarseToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
@@ -229,6 +229,7 @@
             this.consultaDeAlergiasToolStripMenuItem.Name = "consultaDeAlergiasToolStripMenuItem";
             this.consultaDeAlergiasToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
             this.consultaDeAlergiasToolStripMenuItem.Text = "Consulta de Alergias";
+            this.consultaDeAlergiasToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeAlergiasToolStripMenuItem_Click);
             // 
             // MainForm
             // 

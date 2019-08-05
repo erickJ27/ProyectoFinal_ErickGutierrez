@@ -34,11 +34,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.EspecialidadesDataGridView = new System.Windows.Forms.DataGridView();
+            this.MaterialesDataGridView = new System.Windows.Forms.DataGridView();
             this.ConsultarButton = new System.Windows.Forms.Button();
             this.ImprimirButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EspecialidadesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaterialesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -92,13 +92,13 @@
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
             this.FiltroComboBox.TabIndex = 17;
             // 
-            // EspecialidadesDataGridView
+            // MaterialesDataGridView
             // 
-            this.EspecialidadesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EspecialidadesDataGridView.Location = new System.Drawing.Point(12, 70);
-            this.EspecialidadesDataGridView.Name = "EspecialidadesDataGridView";
-            this.EspecialidadesDataGridView.Size = new System.Drawing.Size(337, 280);
-            this.EspecialidadesDataGridView.TabIndex = 48;
+            this.MaterialesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MaterialesDataGridView.Location = new System.Drawing.Point(12, 70);
+            this.MaterialesDataGridView.Name = "MaterialesDataGridView";
+            this.MaterialesDataGridView.Size = new System.Drawing.Size(337, 280);
+            this.MaterialesDataGridView.TabIndex = 48;
             // 
             // ConsultarButton
             // 
@@ -134,13 +134,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ImprimirButton);
-            this.Controls.Add(this.EspecialidadesDataGridView);
+            this.Controls.Add(this.MaterialesDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cMateriales";
             this.Text = "Consulta de Materiales";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EspecialidadesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaterialesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,6 +154,6 @@
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Button ConsultarButton;
         private System.Windows.Forms.Button ImprimirButton;
-        private System.Windows.Forms.DataGridView EspecialidadesDataGridView;
+        private System.Windows.Forms.DataGridView MaterialesDataGridView;
     }
 }

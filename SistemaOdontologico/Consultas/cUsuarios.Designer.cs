@@ -55,7 +55,6 @@
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
             this.UsuariosDataGridView.Size = new System.Drawing.Size(702, 280);
             this.UsuariosDataGridView.TabIndex = 20;
-            
             // 
             // FiltroComboBox
             // 
@@ -82,7 +81,6 @@
             this.groupBox2.Size = new System.Drawing.Size(285, 55);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
-            
             // 
             // label5
             // 
@@ -118,7 +116,6 @@
             this.FiltrarFechaCheckBox.TabIndex = 38;
             this.FiltrarFechaCheckBox.Text = "Filtrar Fecha";
             this.FiltrarFechaCheckBox.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox1
             // 
@@ -131,7 +128,6 @@
             this.groupBox1.Size = new System.Drawing.Size(246, 55);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
-            
             // 
             // label7
             // 
@@ -210,6 +206,7 @@
             this.Name = "cUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Usuarios";
+            
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

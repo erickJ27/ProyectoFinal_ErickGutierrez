@@ -343,6 +343,13 @@ namespace SistemaOdontologico.Registros
         {
             List<MaterialesDetalle> detalles = new List<MaterialesDetalle>();
             Repositorio<ConsultasM> db = new Repositorio<ConsultasM>(new DAL.CentroOdontologicoContexto());
+            if (MaterialesComboBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(MaterialesComboBox, "No a seleccionado un material");
+                MaterialesComboBox.Focus();
+                return;
+            }
+
             if (CantidadNumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(CantidadNumericUpDown, "Cantidad invalidad");

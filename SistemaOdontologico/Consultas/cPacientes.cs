@@ -15,9 +15,11 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cPacientes : Form
     {
+        public List<Pacientes> Lista;
         public cPacientes()
         {
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -47,8 +49,7 @@ namespace SistemaOdontologico.Consultas
 
 
                             case "Sexo":
-                                lista = dbe.GetList(p => Convert.ToString(p.Sexo).Contains(CriterioTextBox.Text));
-
+                                lista = dbe.GetList(p => p.Sexo.Contains(CriterioTextBox.Text));
                                 break;
 
                             case "Grupo Sanguineo":
@@ -90,8 +91,8 @@ namespace SistemaOdontologico.Consultas
                         lista = lista.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
                     }
 
-                    PacientesDataGridView.DataSource = null;
-                    PacientesDataGridView.DataSource = lista;
+                    Lista = lista;
+                    PacientesDataGridView.DataSource = Lista;
                 }
                 catch (Exception)
                 {
@@ -100,8 +101,7 @@ namespace SistemaOdontologico.Consultas
             }
             else
             {
-                try
-                {
+                
                     if (CriterioTextBox.Text.Trim().Length > 0)
                     {
                         switch (FiltroComboBox.Text)
@@ -121,9 +121,10 @@ namespace SistemaOdontologico.Consultas
 
 
                             case "Sexo":
-                                lista = dbe.GetList(p => Convert.ToString(p.Sexo).Contains(CriterioTextBox.Text));
-
+                                lista = dbe.GetList(p => p.Sexo.Contains(CriterioTextBox.Text));
                                 break;
+
+                            
 
                             case "Grupo Sanguineo":
                                 lista = dbe.GetList(p => p.GrupoSanguineo.Contains(CriterioTextBox.Text));
@@ -161,20 +162,24 @@ namespace SistemaOdontologico.Consultas
                     {
                         lista = dbe.GetList(p => true);
                     }
-                    PacientesDataGridView.DataSource = null;
-                    PacientesDataGridView.DataSource = lista;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Introdujo un dato incorrecto");
-                }
+                    Lista = lista;
+                    PacientesDataGridView.DataSource = Lista;
+
             }
         }
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            rptPacientes ver = new rptPacientes();
-            ver.Show();
+            if (PacientesDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptPacientes p = new rptPacientes(Lista);
+                p.ShowDialog();
+            }
         }
     }
 }

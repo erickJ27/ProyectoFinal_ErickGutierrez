@@ -11,13 +11,23 @@ using Entidades;
 
 namespace SistemaOdontologico.Reportes
 {
+    
     public partial class rptUsuarios : Form
     {
-        private List<Usuarios> ListaUsuario;
+        private List<Usuarios> ListaUsuarios;
         public rptUsuarios(List<Usuarios> usuarios)
         {
-            this.ListaUsuario = usuarios;
+            this.ListaUsuarios = usuarios;
             InitializeComponent();
+        }
+
+        private void RptUsuarios_Load(object sender, EventArgs e)
+        {
+            ListadoUsuarios listadoUsuarios = new ListadoUsuarios();
+            listadoUsuarios.SetDataSource(ListaUsuarios);
+
+            crystalReportViewer1.ReportSource = listadoUsuarios;
+            crystalReportViewer1.Refresh();
         }
     }
 }

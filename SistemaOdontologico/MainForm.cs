@@ -172,6 +172,12 @@ namespace SistemaOdontologico
                 Application.Exit();
         }
 
-       
+        private void ConsultaDeAlergiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cAlergias ver = new cAlergias();
+            ver.MdiParent = this;
+            ver.StartPosition = FormStartPosition.CenterScreen;
+            ver.Show();
+        }
     }
 }

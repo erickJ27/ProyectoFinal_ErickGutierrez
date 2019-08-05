@@ -15,10 +15,11 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cUsuarios : Form
     {
-        private List<Usuarios> Lista;
+        public List<Usuarios> Lista;
         public cUsuarios()
         {
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         
@@ -32,15 +33,15 @@ namespace SistemaOdontologico.Consultas
             }
             else
             {
-                rptUsuarios r = new rptUsuarios(Lista);
-                r.ShowDialog();
+                rptUsuarios u = new rptUsuarios(Lista);
+                u.ShowDialog();
             }
         }
 
         private void ConsultarButton_Click_1(object sender, EventArgs e)
         {
 
-            var lista = new List<Usuarios>();
+            var listado = new List<Usuarios>();
             
         Repositorio<Usuarios> dbe = new Repositorio<Usuarios>();
             if (FiltrarFechaCheckBox.Checked == true)
@@ -52,42 +53,42 @@ namespace SistemaOdontologico.Consultas
                         switch (FiltroComboBox.Text)
                         {
                             case "Todo":
-                                lista = dbe.GetList(p => true);
+                                listado = dbe.GetList(p => true);
                                 break;
 
                             case "Id":
                                 int id = Convert.ToInt32(CriterioTextBox.Text);
-                                lista = dbe.GetList(p => p.UsuarioId == id);
+                                listado = dbe.GetList(p => p.UsuarioId == id);
                                 break;
 
                             case "Nombres":
-                                lista = dbe.GetList(p => p.Nombres.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Nombres.Contains(CriterioTextBox.Text));
                                 break;
 
 
                             case "Email":
-                                lista = dbe.GetList(p => p.Email.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Email.Contains(CriterioTextBox.Text));
 
                                 break;
 
                             case "Usuario":
-                                lista = dbe.GetList(p => p.Usuario.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Usuario.Contains(CriterioTextBox.Text));
                                 break;
 
                             default:
                                 break;
                         }
-                        lista = lista.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
+                        listado = listado.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
                     }
                     else
                     {
 
-                        lista = dbe.GetList(p => true);
-                        lista = lista.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
+                        listado = dbe.GetList(p => true);
+                        listado = listado.Where(c => c.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && c.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
                     }
 
-                    UsuariosDataGridView.DataSource = null;
-                    UsuariosDataGridView.DataSource = lista;
+                    Lista = listado;
+                    UsuariosDataGridView.DataSource = Lista;
                 }
                 catch (Exception)
                 {
@@ -96,33 +97,32 @@ namespace SistemaOdontologico.Consultas
             }
             else
             {
-                try
-                {
+                
                     if (CriterioTextBox.Text.Trim().Length > 0)
                     {
                         switch (FiltroComboBox.Text)
                         {
                             case "Todo":
-                                lista = dbe.GetList(p => true);
+                                listado = dbe.GetList(p => true);
                                 break;
 
                             case "Id":
                                 int id = Convert.ToInt32(CriterioTextBox.Text);
-                                lista = dbe.GetList(p => p.UsuarioId == id);
+                                listado = dbe.GetList(p => p.UsuarioId == id);
                                 break;
 
                             case "Nombres":
-                                lista = dbe.GetList(p => p.Nombres.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Nombres.Contains(CriterioTextBox.Text));
                                 break;
 
 
                             case "Email":
-                                lista = dbe.GetList(p => p.Email.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Email.Contains(CriterioTextBox.Text));
 
                                 break;
 
                             case "Usuario":
-                                lista = dbe.GetList(p => p.Usuario.Contains(CriterioTextBox.Text));
+                                listado = dbe.GetList(p => p.Usuario.Contains(CriterioTextBox.Text));
                                 break;
 
                             default:
@@ -132,25 +132,14 @@ namespace SistemaOdontologico.Consultas
                     }
                     else
                     {
-                        lista = dbe.GetList(p => true);
+                        listado = dbe.GetList(p => true);
                     }
-                    UsuariosDataGridView.DataSource = null;
-                    UsuariosDataGridView.DataSource = lista;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Introdujo un dato incorrecto");
-                }
-                Lista = lista;
-                UsuariosDataGridView.DataSource = lista;
+                    
+                
+                Lista = listado;
+                UsuariosDataGridView.DataSource = Lista;
             }
         }
-
-        
-
-        
-
-        
 
         
     }

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cAlergias));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.AlergiasDataGridView = new System.Windows.Forms.DataGridView();
             this.ConsultarButton = new System.Windows.Forms.Button();
             this.ImprimirButton = new System.Windows.Forms.Button();
-            this.VacunasDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VacunasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlergiasDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -83,13 +84,19 @@
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "Id",
-            "Nombres",
-            "Email",
-            "Usuario"});
+            "Descripcion"});
             this.FiltroComboBox.Location = new System.Drawing.Point(7, 27);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
             this.FiltroComboBox.TabIndex = 17;
+            // 
+            // AlergiasDataGridView
+            // 
+            this.AlergiasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AlergiasDataGridView.Location = new System.Drawing.Point(13, 73);
+            this.AlergiasDataGridView.Name = "AlergiasDataGridView";
+            this.AlergiasDataGridView.Size = new System.Drawing.Size(337, 280);
+            this.AlergiasDataGridView.TabIndex = 52;
             // 
             // ConsultarButton
             // 
@@ -102,6 +109,7 @@
             this.ConsultarButton.Text = "Consultar";
             this.ConsultarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ConsultarButton.UseVisualStyleBackColor = true;
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
             // 
             // ImprimirButton
             // 
@@ -114,14 +122,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = true;
-            // 
-            // VacunasDataGridView
-            // 
-            this.VacunasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VacunasDataGridView.Location = new System.Drawing.Point(13, 73);
-            this.VacunasDataGridView.Name = "VacunasDataGridView";
-            this.VacunasDataGridView.Size = new System.Drawing.Size(337, 280);
-            this.VacunasDataGridView.TabIndex = 52;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // cAlergias
             // 
@@ -131,12 +132,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ImprimirButton);
-            this.Controls.Add(this.VacunasDataGridView);
+            this.Controls.Add(this.AlergiasDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cAlergias";
-            this.Text = "cAlergias";
+            this.Text = "Consulta Alergias";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VacunasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlergiasDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,6 +152,6 @@
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Button ConsultarButton;
         private System.Windows.Forms.Button ImprimirButton;
-        private System.Windows.Forms.DataGridView VacunasDataGridView;
+        private System.Windows.Forms.DataGridView AlergiasDataGridView;
     }
 }

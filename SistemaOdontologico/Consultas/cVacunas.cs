@@ -15,9 +15,11 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cVacunas : Form
     {
+        public List<Vacunas> Lista;
         public cVacunas()
         {
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -52,8 +54,8 @@ namespace SistemaOdontologico.Consultas
                 {
                     lista = dbe.GetList(p => true);
                 }
-                VacunasDataGridView.DataSource = null;
-                VacunasDataGridView.DataSource = lista;
+                Lista = lista;
+                VacunasDataGridView.DataSource = Lista;
             }
             catch (Exception)
             {
@@ -63,7 +65,16 @@ namespace SistemaOdontologico.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            
+            if (VacunasDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptVacunas v = new rptVacunas(Lista);
+                v.ShowDialog();
+            }
         }
     }
 }

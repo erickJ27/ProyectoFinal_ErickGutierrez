@@ -14,9 +14,11 @@ namespace SistemaOdontologico.Consultas
 {
     public partial class cMateriales : Form
     {
+        public List<Materiales> Lista;
         public cMateriales()
         {
             InitializeComponent();
+            FiltroComboBox.Text = "Todo";
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
@@ -51,8 +53,8 @@ namespace SistemaOdontologico.Consultas
                 {
                     lista = dbe.GetList(p => true);
                 }
-                EspecialidadesDataGridView.DataSource = null;
-                EspecialidadesDataGridView.DataSource = lista;
+                Lista = lista;
+                MaterialesDataGridView.DataSource = Lista;
             }
             catch (Exception)
             {
@@ -62,8 +64,16 @@ namespace SistemaOdontologico.Consultas
 
         private void ImprimirButton_Click(object sender, EventArgs e)
         {
-            rptMateriales ver = new rptMateriales();
-            ver.Show();
+            if (MaterialesDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No se puede imprimir");
+                return;
+            }
+            else
+            {
+                rptMateriales m = new rptMateriales(Lista);
+                m.ShowDialog();
+            }
         }
     }
 }
